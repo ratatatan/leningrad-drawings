@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://b2yx02mwauxqv"]
+[gd_scene load_steps=14 format=3 uid="uid://b2yx02mwauxqv"]
 
 [ext_resource type="Texture2D" uid="uid://dmnv853l3usq" path="res://assets/textures/wood.png" id="1_kql7n"]
 [ext_resource type="Texture2D" uid="uid://cmwgkja8rjvs" path="res://assets/textures/book.png" id="2_8n18e"]
 [ext_resource type="Script" uid="uid://0x2lcsx13dkn" path="res://scripts/readable.gd" id="3_tjwpk"]
 [ext_resource type="Script" uid="uid://djrrtio3es14q" path="res://scripts/book_contents.gd" id="4_8n18e"]
 [ext_resource type="Texture2D" uid="uid://mm73vriwrhl0" path="res://assets/textures/note.png" id="4_tac8f"]
+[ext_resource type="Texture2D" uid="uid://djrw8yr0jh0kv" path="res://assets/textures/kids-album.png" id="4_vb5ih"]
 [ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/page.gd" id="5_lpubu"]
 [ext_resource type="Resource" uid="uid://bwxccvwc0w1uw" path="res://resources/book_pages/page1_intro.tres" id="6_lt2xq"]
 [ext_resource type="Texture2D" uid="uid://dahmcg6c4vu1t" path="res://assets/textures/tuda.png" id="7_1p5nq"]
@@ -39,7 +40,6 @@ texture = ExtResource("1_kql7n")
 stretch_mode = 1
 
 [node name="Book" type="TextureButton" parent="." node_paths=PackedStringArray("panel")]
-z_index = 1
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -60,17 +60,38 @@ stretch_mode = 0
 script = ExtResource("3_tjwpk")
 panel = NodePath("../BookContents")
 
+[node name="KidsAlbum" type="TextureButton" parent="." node_paths=PackedStringArray("panel")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -784.0
+offset_top = 317.0
+offset_right = -219.0
+offset_bottom = 861.0
+grow_horizontal = 0
+rotation = -0.363028
+texture_normal = ExtResource("4_vb5ih")
+texture_pressed = ExtResource("4_vb5ih")
+texture_hover = ExtResource("4_vb5ih")
+texture_disabled = ExtResource("4_vb5ih")
+texture_focused = ExtResource("4_vb5ih")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("3_tjwpk")
+panel = NodePath("../BookContents")
+
 [node name="Note" type="TextureButton" parent="." node_paths=PackedStringArray("panel")]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.98
 anchor_bottom = 0.98
-offset_left = 1489.0
-offset_top = -962.4
-offset_right = 2091.0
-offset_bottom = -394.4
+offset_left = 266.0
+offset_top = -469.4
+offset_right = 868.0
+offset_bottom = 98.6
 grow_vertical = 0
-rotation = 0.541052
+rotation = -0.249582
 texture_normal = ExtResource("4_tac8f")
 ignore_texture_size = true
 stretch_mode = 0
@@ -219,6 +240,7 @@ stretch_mode = 0
 script = ExtResource("13_tac8f")
 
 [connection signal="pressed" from="Book" to="Book" method="_on_pressed"]
+[connection signal="pressed" from="KidsAlbum" to="KidsAlbum" method="_on_pressed"]
 [connection signal="pressed" from="BookContents/Back" to="BookContents" method="_on_back_pressed"]
 [connection signal="pressed" from="BookContents/Next" to="BookContents" method="_on_next_pressed"]
 [connection signal="pressed" from="BookContents/Close" to="BookContents" method="_on_close_pressed"]
