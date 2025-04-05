@@ -1,15 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://b2yx02mwauxqv"]
+[gd_scene load_steps=13 format=3 uid="uid://b2yx02mwauxqv"]
 
-[ext_resource type="Texture2D" uid="uid://bl0o3q4rpl03k" path="res://assets/textures/wood.jpg" id="1_brbbq"]
-[ext_resource type="Texture2D" uid="uid://b0odciruyfmal" path="res://assets/textures/book.png" id="2_8n18e"]
+[ext_resource type="Texture2D" uid="uid://dmnv853l3usq" path="res://assets/textures/wood.png" id="1_kql7n"]
+[ext_resource type="Texture2D" uid="uid://cmwgkja8rjvs" path="res://assets/textures/book.png" id="2_8n18e"]
 [ext_resource type="Script" uid="uid://0x2lcsx13dkn" path="res://scripts/readable.gd" id="3_tjwpk"]
-[ext_resource type="Texture2D" uid="uid://c0p645b3jym44" path="res://assets/textures/paper.png" id="4_01bab"]
 [ext_resource type="Script" uid="uid://djrrtio3es14q" path="res://scripts/book_contents.gd" id="4_8n18e"]
+[ext_resource type="Texture2D" uid="uid://mm73vriwrhl0" path="res://assets/textures/note.png" id="4_tac8f"]
 [ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/page.gd" id="5_lpubu"]
 [ext_resource type="Resource" uid="uid://bwxccvwc0w1uw" path="res://resources/book_pages/page1_intro.tres" id="6_lt2xq"]
 [ext_resource type="Texture2D" uid="uid://dahmcg6c4vu1t" path="res://assets/textures/tuda.png" id="7_1p5nq"]
 [ext_resource type="Theme" uid="uid://dkx7xsfaa3kbj" path="res://resources/themes/text_theme.tres" id="8_exs80"]
-[ext_resource type="Texture2D" uid="uid://bhq2dk58cftd0" path="res://assets/textures/suda.png" id="8_hob4j"]
 [ext_resource type="Texture2D" uid="uid://chry2egjw4uim" path="res://assets/textures/close.png" id="9_hob4j"]
 [ext_resource type="Script" uid="uid://cga6l2fob5ljf" path="res://scripts/note_contents.gd" id="12_kql7n"]
 [ext_resource type="Script" uid="uid://do6nusuhedgym" path="res://scripts/audio_stream_player.gd" id="13_tac8f"]
@@ -19,6 +18,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 2.0
+offset_right = 19.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -27,19 +30,26 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_brbbq")
+scale = Vector2(0.745, 0.745)
+texture = ExtResource("1_kql7n")
 stretch_mode = 1
 
 [node name="Book" type="TextureButton" parent="." node_paths=PackedStringArray("panel")]
+z_index = 1
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -617.0
-offset_bottom = 583.0
+offset_left = -1370.0
+offset_top = 57.0
+offset_right = -975.0
+offset_bottom = 437.0
 grow_horizontal = 0
+rotation = 0.111701
 texture_normal = ExtResource("2_8n18e")
 texture_pressed = ExtResource("2_8n18e")
 texture_hover = ExtResource("2_8n18e")
@@ -55,14 +65,13 @@ layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.98
 anchor_bottom = 0.98
-offset_top = -386.0
-offset_right = 409.0
+offset_left = 1489.0
+offset_top = -962.4
+offset_right = 2091.0
+offset_bottom = -394.4
 grow_vertical = 0
-texture_normal = ExtResource("4_01bab")
-texture_pressed = ExtResource("4_01bab")
-texture_hover = ExtResource("4_01bab")
-texture_disabled = ExtResource("4_01bab")
-texture_focused = ExtResource("4_01bab")
+rotation = 0.541052
+texture_normal = ExtResource("4_tac8f")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("3_tjwpk")
@@ -110,9 +119,12 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -150.0
-offset_right = 150.0
+offset_left = 139.0
+offset_top = -48.0
+offset_right = 239.0
+offset_bottom = 52.0
 grow_vertical = 0
+rotation = 3.14159
 texture_normal = ExtResource("7_1p5nq")
 texture_pressed = ExtResource("7_1p5nq")
 texture_hover = ExtResource("7_1p5nq")
@@ -128,22 +140,22 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -150.0
+offset_left = -140.0
+offset_top = -148.0
+offset_right = -40.0
+offset_bottom = -48.0
 grow_horizontal = 0
 grow_vertical = 0
-texture_normal = ExtResource("8_hob4j")
-texture_pressed = ExtResource("8_hob4j")
-texture_hover = ExtResource("8_hob4j")
-texture_disabled = ExtResource("8_hob4j")
-texture_focused = ExtResource("8_hob4j")
+texture_normal = ExtResource("7_1p5nq")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Close" type="TextureButton" parent="BookContents"]
 layout_mode = 1
-offset_right = 150.0
-offset_bottom = 150.0
+offset_left = 21.0
+offset_top = 14.0
+offset_right = 138.0
+offset_bottom = 131.0
 texture_normal = ExtResource("9_hob4j")
 texture_pressed = ExtResource("9_hob4j")
 texture_hover = ExtResource("9_hob4j")
@@ -159,6 +171,7 @@ anchors_preset = -1
 anchor_top = 0.736
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -116.88
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("12_kql7n")
@@ -170,10 +183,15 @@ anchor_left = 0.01
 anchor_top = 0.05
 anchor_right = 0.99
 anchor_bottom = 0.95
+offset_left = 56.8
+offset_top = 15.9
+offset_right = -85.8
+offset_bottom = 0.100006
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("8_exs80")
-text = "Записка о ВОВ"
+text = "		Великая Отечественная война (1941–1945) стала ключевой частью Второй мировой войны, где СССР противостоял нацистской Германии. Одной из самых трагических страниц стала блокада Ленинграда (8 сентября 1941 – 27 января 1944), длившаяся 872 дня. Город был окружён немецкими и финскими войсками, отрезан от снабжения, что привело к голоду, холоду и гибели около 1 млн человек. Единственной связью с \"Большой землёй\" стала \"Дорога жизни\" через Ладожское озеро. 
+		Несмотря на тяжелейшие условия, ленинградцы работали на заводах и защищали город. 18 января 1943 года блокада была частично прорвана, а 27 января 1944-го — полностью снята. Подвиг Ленинграда стал символом мужества и стойкости советского народа."
 fit_content = true
 
 [node name="Close" type="TextureButton" parent="NoteContents"]
@@ -183,8 +201,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -150.0
+offset_left = -125.0
+offset_top = -122.0
+offset_right = -17.0
+offset_bottom = -14.0
 grow_horizontal = 0
 grow_vertical = 0
 texture_normal = ExtResource("9_hob4j")
@@ -198,6 +218,7 @@ stretch_mode = 0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 script = ExtResource("13_tac8f")
 
+[connection signal="pressed" from="Book" to="Book" method="_on_pressed"]
 [connection signal="pressed" from="BookContents/Back" to="BookContents" method="_on_back_pressed"]
 [connection signal="pressed" from="BookContents/Next" to="BookContents" method="_on_next_pressed"]
 [connection signal="pressed" from="BookContents/Close" to="BookContents" method="_on_close_pressed"]
