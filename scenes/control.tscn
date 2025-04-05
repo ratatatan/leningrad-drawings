@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b2yx02mwauxqv"]
+[gd_scene load_steps=14 format=3 uid="uid://b2yx02mwauxqv"]
 
 [ext_resource type="Texture2D" uid="uid://bl0o3q4rpl03k" path="res://assets/textures/wood.jpg" id="1_brbbq"]
 [ext_resource type="Texture2D" uid="uid://b0odciruyfmal" path="res://assets/textures/book.png" id="2_8n18e"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bhq2dk58cftd0" path="res://assets/textures/suda.png" id="8_hob4j"]
 [ext_resource type="Texture2D" uid="uid://chry2egjw4uim" path="res://assets/textures/close.png" id="9_hob4j"]
 [ext_resource type="Script" uid="uid://cga6l2fob5ljf" path="res://scripts/note_contents.gd" id="12_kql7n"]
+[ext_resource type="Script" uid="uid://do6nusuhedgym" path="res://scripts/audio_stream_player.gd" id="13_tac8f"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -67,7 +68,7 @@ stretch_mode = 0
 script = ExtResource("3_tjwpk")
 panel = NodePath("../NoteContents")
 
-[node name="BookContents" type="Panel" parent="."]
+[node name="BookContents" type="Panel" parent="." node_paths=PackedStringArray("player")]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -77,6 +78,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_8n18e")
 pages = Array[ExtResource("5_lpubu")]([ExtResource("6_lt2xq")])
+player = NodePath("../AudioStreamPlayer")
 
 [node name="Image" type="TextureRect" parent="BookContents"]
 layout_mode = 1
@@ -192,6 +194,9 @@ texture_disabled = ExtResource("9_hob4j")
 texture_focused = ExtResource("9_hob4j")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("13_tac8f")
 
 [connection signal="pressed" from="BookContents/Back" to="BookContents" method="_on_back_pressed"]
 [connection signal="pressed" from="BookContents/Next" to="BookContents" method="_on_next_pressed"]

@@ -13,6 +13,7 @@ config_version=5
 config/name="Leningrad Drawings"
 run/main_scene="res://scenes/control.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+run/max_fps=60
 config/icon="res://icon.svg"
 
 [autoload]
@@ -24,6 +25,7 @@ Settings="*res://scripts/settings.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+window/size/resizable=false
 window/stretch/mode="viewport"
 window/size/viewport_width_expected=3840
 window/size/viewport_height_expected=2160

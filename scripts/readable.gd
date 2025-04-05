@@ -1,6 +1,6 @@
-extends TextureButton
+class_name Readable extends TextureButton
 
-@export var panel: Control
+@export var panel: ReadableContents
 
 func _pressed() -> void:
-	panel.visible = true
+	panel.open()
