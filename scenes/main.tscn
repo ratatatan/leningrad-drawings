@@ -1,102 +1,105 @@
-[gd_scene load_steps=14 format=3 uid="uid://b2yx02mwauxqv"]
+[gd_scene load_steps=17 format=3 uid="uid://b2yx02mwauxqv"]
 
-[ext_resource type="Texture2D" uid="uid://dmnv853l3usq" path="res://assets/textures/wood.png" id="1_kql7n"]
-[ext_resource type="Texture2D" uid="uid://cmwgkja8rjvs" path="res://assets/textures/book.png" id="2_8n18e"]
-[ext_resource type="Script" uid="uid://0x2lcsx13dkn" path="res://scripts/readable.gd" id="3_tjwpk"]
-[ext_resource type="Script" uid="uid://djrrtio3es14q" path="res://scripts/book_contents.gd" id="4_8n18e"]
-[ext_resource type="Texture2D" uid="uid://mm73vriwrhl0" path="res://assets/textures/note.png" id="4_tac8f"]
-[ext_resource type="Texture2D" uid="uid://djrw8yr0jh0kv" path="res://assets/textures/kids-album.png" id="4_vb5ih"]
-[ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/page.gd" id="5_lpubu"]
-[ext_resource type="Resource" uid="uid://bwxccvwc0w1uw" path="res://resources/book_pages/page1_intro.tres" id="6_lt2xq"]
-[ext_resource type="Texture2D" uid="uid://dahmcg6c4vu1t" path="res://assets/textures/tuda.png" id="7_1p5nq"]
-[ext_resource type="Theme" uid="uid://dkx7xsfaa3kbj" path="res://resources/themes/text_theme.tres" id="8_exs80"]
-[ext_resource type="Texture2D" uid="uid://chry2egjw4uim" path="res://assets/textures/close.png" id="9_hob4j"]
-[ext_resource type="Script" uid="uid://cga6l2fob5ljf" path="res://scripts/note_contents.gd" id="12_kql7n"]
-[ext_resource type="Script" uid="uid://do6nusuhedgym" path="res://scripts/audio_stream_player.gd" id="13_tac8f"]
+[ext_resource type="Script" uid="uid://bp11yuqa2xrqy" path="res://scripts/main.gd" id="1_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://dmnv853l3usq" path="res://assets/textures/wood.png" id="2_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://cmwgkja8rjvs" path="res://assets/textures/book.png" id="3_jbj1t"]
+[ext_resource type="Script" uid="uid://0x2lcsx13dkn" path="res://scripts/readable.gd" id="4_muem4"]
+[ext_resource type="Texture2D" uid="uid://djrw8yr0jh0kv" path="res://assets/textures/kids-album.png" id="5_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://mm73vriwrhl0" path="res://assets/textures/note.png" id="6_0ld40"]
+[ext_resource type="Script" uid="uid://djrrtio3es14q" path="res://scripts/book_contents.gd" id="7_gqmmt"]
+[ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/page.gd" id="8_yc10j"]
+[ext_resource type="Resource" uid="uid://bwxccvwc0w1uw" path="res://resources/book_pages/page1_intro.tres" id="9_jscy8"]
+[ext_resource type="Texture2D" uid="uid://cijfm6likxvj4" path="res://icon.svg" id="10_jkv2x"]
+[ext_resource type="Theme" uid="uid://dkx7xsfaa3kbj" path="res://resources/themes/text_theme.tres" id="10_pm3ni"]
+[ext_resource type="Texture2D" uid="uid://dahmcg6c4vu1t" path="res://assets/textures/tuda.png" id="11_y6deb"]
+[ext_resource type="Texture2D" uid="uid://chry2egjw4uim" path="res://assets/textures/close.png" id="12_og1vs"]
+[ext_resource type="Script" uid="uid://cga6l2fob5ljf" path="res://scripts/note_contents.gd" id="13_2wyq8"]
+[ext_resource type="Script" uid="uid://do6nusuhedgym" path="res://scripts/audio_stream_player.gd" id="14_vxglm"]
+[ext_resource type="Script" uid="uid://cwhoyqi67mgj3" path="res://scripts/text_resize.gd" id="15_jbj1t"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 19.0
-offset_top = 2.0
-offset_right = 19.0
-offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_a8y0u")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 640.0
-offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.745, 0.745)
-texture = ExtResource("1_kql7n")
-stretch_mode = 1
+texture = ExtResource("2_jkv2x")
+expand_mode = 2
 
 [node name="Book" type="TextureButton" parent="." node_paths=PackedStringArray("panel")]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -1370.0
-offset_top = 57.0
-offset_right = -975.0
-offset_bottom = 437.0
-grow_horizontal = 0
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.061
+anchor_right = 0.473
+anchor_bottom = 0.443
+offset_right = 43.946
+offset_bottom = -39.692
 rotation = 0.111701
-texture_normal = ExtResource("2_8n18e")
-texture_pressed = ExtResource("2_8n18e")
-texture_hover = ExtResource("2_8n18e")
-texture_disabled = ExtResource("2_8n18e")
-texture_focused = ExtResource("2_8n18e")
+texture_normal = ExtResource("3_jbj1t")
+texture_pressed = ExtResource("3_jbj1t")
+texture_hover = ExtResource("3_jbj1t")
+texture_disabled = ExtResource("3_jbj1t")
+texture_focused = ExtResource("3_jbj1t")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("3_tjwpk")
+script = ExtResource("4_muem4")
 panel = NodePath("../BookContents")
+metadata/_edit_use_anchors_ = true
 
 [node name="KidsAlbum" type="TextureButton" parent="." node_paths=PackedStringArray("panel")]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -784.0
-offset_top = 317.0
-offset_right = -219.0
-offset_bottom = 861.0
+anchors_preset = -1
+anchor_left = 0.489
+anchor_top = 0.33
+anchor_right = 1.00545
+anchor_bottom = 1.01404
+offset_left = -38.12
+offset_top = 134.56
+offset_right = -188.456
+offset_bottom = 153.84
 grow_horizontal = 0
+grow_vertical = 2
 rotation = -0.363028
-texture_normal = ExtResource("4_vb5ih")
-texture_pressed = ExtResource("4_vb5ih")
-texture_hover = ExtResource("4_vb5ih")
-texture_disabled = ExtResource("4_vb5ih")
-texture_focused = ExtResource("4_vb5ih")
+texture_normal = ExtResource("5_dp3eg")
+texture_pressed = ExtResource("5_dp3eg")
+texture_hover = ExtResource("5_dp3eg")
+texture_disabled = ExtResource("5_dp3eg")
+texture_focused = ExtResource("5_dp3eg")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("3_tjwpk")
+script = ExtResource("4_muem4")
 panel = NodePath("../BookContents")
+metadata/_edit_use_anchors_ = true
 
 [node name="Note" type="TextureButton" parent="." node_paths=PackedStringArray("panel")]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.98
-anchor_bottom = 0.98
-offset_left = 266.0
-offset_top = -469.4
-offset_right = 868.0
-offset_bottom = 98.6
-grow_vertical = 0
+anchor_left = 0.277
+anchor_top = 0.592
+anchor_right = 0.485
+anchor_bottom = 0.962
 rotation = -0.249582
-texture_normal = ExtResource("4_tac8f")
+texture_normal = ExtResource("6_0ld40")
+texture_pressed = ExtResource("6_0ld40")
+texture_hover = ExtResource("6_0ld40")
+texture_disabled = ExtResource("6_0ld40")
+texture_focused = ExtResource("6_0ld40")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("3_tjwpk")
+script = ExtResource("4_muem4")
 panel = NodePath("../NoteContents")
+metadata/_edit_use_anchors_ = true
 
 [node name="BookContents" type="Panel" parent="." node_paths=PackedStringArray("player")]
 visible = false
@@ -106,8 +109,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("4_8n18e")
-pages = Array[ExtResource("5_lpubu")]([ExtResource("6_lt2xq")])
+script = ExtResource("7_gqmmt")
+pages = Array[ExtResource("8_yc10j")]([ExtResource("9_jscy8")])
 player = NodePath("../AudioStreamPlayer")
 
 [node name="Image" type="TextureRect" parent="BookContents"]
@@ -117,6 +120,7 @@ anchor_left = 0.02
 anchor_right = 0.48
 anchor_bottom = 1.0
 grow_vertical = 2
+texture = ExtResource("10_jkv2x")
 expand_mode = 4
 stretch_mode = 5
 
@@ -127,61 +131,54 @@ anchors_preset = -1
 anchor_left = 0.52
 anchor_right = 0.98
 anchor_bottom = 1.0
-theme = ExtResource("8_exs80")
+theme = ExtResource("10_pm3ni")
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 fit_content = true
 shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
 threaded = true
+script = ExtResource("15_jbj1t")
 
 [node name="Back" type="TextureButton" parent="BookContents"]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
+anchors_preset = -1
+anchor_top = 0.907
+anchor_right = 0.052
 anchor_bottom = 1.0
-offset_left = 139.0
-offset_top = -48.0
-offset_right = 239.0
-offset_bottom = 52.0
+offset_left = 201.0
+offset_top = 199.88
+offset_right = 201.32
+offset_bottom = 199.0
 grow_vertical = 0
 rotation = 3.14159
-texture_normal = ExtResource("7_1p5nq")
-texture_pressed = ExtResource("7_1p5nq")
-texture_hover = ExtResource("7_1p5nq")
-texture_disabled = ExtResource("7_1p5nq")
-texture_focused = ExtResource("7_1p5nq")
+texture_normal = ExtResource("11_y6deb")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Next" type="TextureButton" parent="BookContents"]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
+anchors_preset = -1
+anchor_left = 0.948
+anchor_top = 0.907
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -140.0
-offset_top = -148.0
-offset_right = -40.0
-offset_bottom = -48.0
+offset_left = -0.320313
+offset_top = 0.879883
 grow_horizontal = 0
 grow_vertical = 0
-texture_normal = ExtResource("7_1p5nq")
+texture_normal = ExtResource("11_y6deb")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Close" type="TextureButton" parent="BookContents"]
 layout_mode = 1
-offset_left = 21.0
-offset_top = 14.0
-offset_right = 138.0
-offset_bottom = 131.0
-texture_normal = ExtResource("9_hob4j")
-texture_pressed = ExtResource("9_hob4j")
-texture_hover = ExtResource("9_hob4j")
-texture_disabled = ExtResource("9_hob4j")
-texture_focused = ExtResource("9_hob4j")
+anchors_preset = -1
+anchor_right = 0.052
+anchor_bottom = 0.093
+offset_right = 0.319992
+offset_bottom = -0.880005
+texture_normal = ExtResource("12_og1vs")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -195,7 +192,7 @@ anchor_bottom = 1.0
 offset_top = -116.88
 grow_horizontal = 2
 grow_vertical = 0
-script = ExtResource("12_kql7n")
+script = ExtResource("13_2wyq8")
 
 [node name="Description" type="RichTextLabel" parent="NoteContents"]
 layout_mode = 1
@@ -210,34 +207,34 @@ offset_right = -85.8
 offset_bottom = 0.100006
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("8_exs80")
+theme = ExtResource("10_pm3ni")
 text = "		Великая Отечественная война (1941–1945) стала ключевой частью Второй мировой войны, где СССР противостоял нацистской Германии. Одной из самых трагических страниц стала блокада Ленинграда (8 сентября 1941 – 27 января 1944), длившаяся 872 дня. Город был окружён немецкими и финскими войсками, отрезан от снабжения, что привело к голоду, холоду и гибели около 1 млн человек. Единственной связью с \"Большой землёй\" стала \"Дорога жизни\" через Ладожское озеро. 
 		Несмотря на тяжелейшие условия, ленинградцы работали на заводах и защищали город. 18 января 1943 года блокада была частично прорвана, а 27 января 1944-го — полностью снята. Подвиг Ленинграда стал символом мужества и стойкости советского народа."
 fit_content = true
+script = ExtResource("15_jbj1t")
 
 [node name="Close" type="TextureButton" parent="NoteContents"]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
+anchors_preset = -1
+anchor_left = 0.948
+anchor_top = 0.707
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -125.0
-offset_top = -122.0
-offset_right = -17.0
-offset_bottom = -14.0
+offset_left = -0.320313
+offset_top = 0.326141
+offset_bottom = -1.0
 grow_horizontal = 0
 grow_vertical = 0
-texture_normal = ExtResource("9_hob4j")
-texture_pressed = ExtResource("9_hob4j")
-texture_hover = ExtResource("9_hob4j")
-texture_disabled = ExtResource("9_hob4j")
-texture_focused = ExtResource("9_hob4j")
+texture_normal = ExtResource("12_og1vs")
+texture_pressed = ExtResource("12_og1vs")
+texture_hover = ExtResource("12_og1vs")
+texture_disabled = ExtResource("12_og1vs")
+texture_focused = ExtResource("12_og1vs")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-script = ExtResource("13_tac8f")
+script = ExtResource("14_vxglm")
 
 [connection signal="pressed" from="Book" to="Book" method="_on_pressed"]
 [connection signal="pressed" from="KidsAlbum" to="KidsAlbum" method="_on_pressed"]
