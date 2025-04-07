@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Page" load_steps=4 format=3 uid="uid://cjgcfbsl8t0qc"]
+
+[ext_resource type="AudioStream" uid="uid://cg4caviify2cx" path="res://assets/audio/record_3_school.wav" id="1_xqiyl"]
+[ext_resource type="Texture2D" uid="uid://p71j281lgc63" path="res://assets/images/ujnoe-more.png" id="2_osql7"]
+[ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/page.gd" id="3_wuny1"]
+
+[resource]
+script = ExtResource("3_wuny1")
+image = ExtResource("2_osql7")
+text = "В разгар зимы 1941 года я рисовала летнее море — лазурное, с белым парусником, скользящим по воде. Солнечные блики, гладкие камни на берегу, безоблачное небо. Я ещё не знала, что такие безмятежные дни скоро останутся только в памяти, и уже через несколько месяцев моё детство перевернётся. "
+title = "[center]\"Южное море\" (январь 1941)[/center]"
+audio = ExtResource("1_xqiyl")
+metadata/_custom_type_script = "uid://dybs5mlhnc8ov"

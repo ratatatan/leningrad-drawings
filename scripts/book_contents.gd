@@ -5,6 +5,7 @@ extends ReadableContents
 
 @onready var image := $Image
 @onready var desc := $Description
+@onready var title := $Title
 
 var current_page: int = 0:
 	set(x): current_page = clamp(x, 0, pages.size()-1)
@@ -31,6 +32,11 @@ func load_page(page_index: int):
 		desc.text = new_page.text
 	else:
 		desc.text = Settings.lorem_ipsum
+		
+	if new_page.title:	
+		title.text = new_page.title
+	else:
+		title.text = Settings.lorem_ipsum
 	
 	if player.playing:
 		player.stop()

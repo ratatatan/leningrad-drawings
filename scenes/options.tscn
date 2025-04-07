@@ -1,0 +1,141 @@
+[gd_scene load_steps=7 format=3 uid="uid://cspuomd1ysgr4"]
+
+[ext_resource type="Script" uid="uid://naqy6j2av4cc" path="res://scripts/options.gd" id="1_kv8mn"]
+[ext_resource type="FontFile" uid="uid://csly5g6rewojw" path="res://assets/fonts/font-evgeniya.ttf" id="2_2iy26"]
+[ext_resource type="Texture2D" uid="uid://chry2egjw4uim" path="res://assets/textures/close.png" id="2_yjkok"]
+[ext_resource type="Theme" uid="uid://cieronx6gd47v" path="res://resources/themes/tooltip.tres" id="3_2iy26"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kp4ld"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2iy26"]
+content_margin_left = 90.0
+content_margin_top = 90.0
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 3858.0
+offset_bottom = 2173.0
+script = ExtResource("1_kv8mn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kp4ld")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.0255208
+anchor_top = 0.406019
+anchor_right = 0.580469
+anchor_bottom = 1.1912
+offset_left = 38.0
+offset_top = -315.0
+offset_right = 38.0
+offset_bottom = -315.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_2iy26")
+theme_override_font_sizes/normal_font_size = 90
+text = "		Годы Великой Отечественной войны и блокадного Ленинграда являются невероятно трагичным периодом истории нашей страны. Уже в годы войны и блокады одной из форм проживания трагедии стали дневники, а дети показывали свои переживания также и с помощью рисунков. Наш проект нацелен на показ трагедии целого народа через историю детства и погружение зрителя в контекст с помощью показа выставки будто бы глазами ребенка. Это позволяет пользователям прочувствовать весь спектр эмоций, который приходилось переживать маленьким жителям блокадного Ленинграда."
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_right = 520.0
+offset_bottom = 520.0
+scale = Vector2(0.4, 0.4)
+theme_override_styles/normal = SubResource("StyleBoxFlat_2iy26")
+icon = ExtResource("2_yjkok")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.386111
+anchor_right = 0.51849
+anchor_bottom = 0.547222
+offset_left = 47.0
+offset_top = -500.0
+offset_right = 47.0
+offset_bottom = -500.0
+theme = ExtResource("3_2iy26")
+theme_override_colors/default_color = Color(0.756863, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_2iy26")
+theme_override_font_sizes/normal_font_size = 150
+text = "Описание выставки"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.0109375
+anchor_top = 0.386111
+anchor_right = 0.419531
+anchor_bottom = 0.605093
+offset_left = 2250.0
+offset_top = -500.0
+offset_right = 2250.0
+offset_bottom = -500.0
+theme_override_colors/default_color = Color(0.756863, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_2iy26")
+theme_override_font_sizes/normal_font_size = 120
+text = "Выставку подготовили студенты Университета ИТМО"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 2301.0
+offset_top = 880.0
+offset_right = 4998.0
+offset_bottom = 1588.0
+theme_override_colors/default_color = Color(0.756863, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_2iy26")
+theme_override_font_sizes/normal_font_size = 95
+text = "Креативные продюсеры:"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 2301.0
+offset_top = 1521.0
+offset_right = 4998.0
+offset_bottom = 2229.0
+theme_override_colors/default_color = Color(0.756863, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_2iy26")
+theme_override_font_sizes/normal_font_size = 95
+text = "Разработчики:"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.796268
+anchor_top = 0.701335
+anchor_right = 1.35122
+anchor_bottom = 1.48652
+offset_left = -706.667
+offset_top = -495.883
+offset_right = -706.667
+offset_bottom = -495.883
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_2iy26")
+theme_override_font_sizes/normal_font_size = 80
+text = "Мосолова Полина - \"голос Жени\"
+Ковалёва София - \"руки Жени\"
+Марченко Дария - \"\""
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.796268
+anchor_top = 0.701335
+anchor_right = 1.35122
+anchor_bottom = 1.48652
+offset_left = -706.667
+offset_top = 140.117
+offset_right = -706.667
+offset_bottom = 140.117
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_2iy26")
+theme_override_font_sizes/normal_font_size = 80
+text = "Кузнецова Виталия
+Толкачев Тимур"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_close_pressed"]

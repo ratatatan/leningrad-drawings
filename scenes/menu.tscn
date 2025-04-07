@@ -12,7 +12,7 @@ func _on_go_game_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file(\"res://scenes/options.tscn\")
 
 
 func _on_exit_pressed() -> void:
@@ -39,7 +39,10 @@ corner_radius_bottom_left = 50
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.023
+offset_right = -3840.0
+offset_bottom = -2209.68
 script = SubResource("GDScript_vjb58")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -50,33 +53,42 @@ offset_bottom = 2173.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_con2f")
 
 [node name="Image" type="Panel" parent="CanvasLayer"]
-offset_left = 2012.0
-offset_top = 946.0
-offset_right = 3679.0
-offset_bottom = 2103.0
+anchors_preset = -1
+anchor_left = 0.523958
+anchor_top = 0.437963
+anchor_right = 0.958073
+anchor_bottom = 0.973611
 theme_override_styles/panel = SubResource("StyleBoxTexture_g3eks")
+metadata/_edit_use_anchors_ = true
 
 [node name="Title1" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 246.0
-offset_top = 222.0
-offset_right = 4083.0
-offset_bottom = 984.0
+anchors_preset = -1
+anchor_left = 0.0640625
+anchor_top = 0.102778
+anchor_right = 1.06328
+anchor_bottom = 0.455556
+offset_right = -0.000244141
+size_flags_horizontal = 4
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("1_mhnvy")
 theme_override_font_sizes/normal_font_size = 160
 text = "Выставка детских рисунков Жени Шавровой
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Title2" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 704.0
-offset_top = 432.0
-offset_right = 4541.0
-offset_bottom = 1194.0
+anchors_preset = -1
+anchor_left = 0.183333
+anchor_top = 0.2
+anchor_right = 1.18255
+anchor_bottom = 0.552778
+size_flags_horizontal = 4
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("1_mhnvy")
 theme_override_font_sizes/normal_font_size = 110
 text = "и других детей-учатников блокады Ленинграда
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="GoGame" type="Button" parent="CanvasLayer"]
 anchors_preset = -1
@@ -85,7 +97,7 @@ anchor_top = 0.62963
 anchor_right = 0.295833
 anchor_bottom = 0.711111
 theme_override_fonts/font = ExtResource("1_mhnvy")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 85
 theme_override_styles/normal = SubResource("StyleBoxFlat_vjb58")
 text = "Посетить выставку"
 metadata/_edit_use_anchors_ = true
@@ -96,11 +108,10 @@ anchor_left = 0.0666667
 anchor_top = 0.748148
 anchor_right = 0.295833
 anchor_bottom = 0.82963
-offset_bottom = 0.00012207
 theme_override_fonts/font = ExtResource("1_mhnvy")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 85
 theme_override_styles/normal = SubResource("StyleBoxFlat_vjb58")
-text = "Настройки"
+text = "О выставке"
 metadata/_edit_use_anchors_ = true
 
 [node name="Exit" type="Button" parent="CanvasLayer"]
@@ -110,7 +121,7 @@ anchor_top = 0.866667
 anchor_right = 0.295833
 anchor_bottom = 0.948148
 theme_override_fonts/font = ExtResource("1_mhnvy")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 85
 theme_override_styles/normal = SubResource("StyleBoxFlat_vjb58")
 text = "Выйти "
 metadata/_edit_use_anchors_ = true

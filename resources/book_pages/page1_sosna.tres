@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Page" load_steps=4 format=3 uid="uid://bwxccvwc0w1uw"]
+
+[ext_resource type="AudioStream" uid="uid://cpcigl5jwdssj" path="res://assets/audio/record_1_foreword.wav" id="1_slt4i"]
+[ext_resource type="Texture2D" uid="uid://c06o3ry4ontsy" path="res://assets/images/sosna.png" id="2_3l54i"]
+[ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/page.gd" id="2_phcn0"]
+
+[resource]
+script = ExtResource("2_phcn0")
+image = ExtResource("2_3l54i")
+text = "Эту работу я нарисовала когда-то, но точную дату уже не вспомню. Захотелось изобразить сосну на берегу озера и небольшой домик рыбака."
+title = "[center]Сосна[/center]"
+audio = ExtResource("1_slt4i")
+metadata/_custom_type_script = "uid://dybs5mlhnc8ov"

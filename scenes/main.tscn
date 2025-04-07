@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2yx02mwauxqv"]
+[gd_scene load_steps=24 format=3 uid="uid://b2yx02mwauxqv"]
 
 [ext_resource type="Script" uid="uid://bp11yuqa2xrqy" path="res://scripts/main.gd" id="1_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://dmnv853l3usq" path="res://assets/textures/wood.png" id="2_jkv2x"]
@@ -8,14 +8,26 @@
 [ext_resource type="Texture2D" uid="uid://mm73vriwrhl0" path="res://assets/textures/note.png" id="6_0ld40"]
 [ext_resource type="Script" uid="uid://djrrtio3es14q" path="res://scripts/book_contents.gd" id="7_gqmmt"]
 [ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/page.gd" id="8_yc10j"]
-[ext_resource type="Resource" uid="uid://bwxccvwc0w1uw" path="res://resources/book_pages/page1_intro.tres" id="9_jscy8"]
+[ext_resource type="Resource" uid="uid://bwxccvwc0w1uw" path="res://resources/book_pages/page1_sosna.tres" id="9_jscy8"]
 [ext_resource type="Texture2D" uid="uid://cijfm6likxvj4" path="res://icon.svg" id="10_jkv2x"]
 [ext_resource type="Theme" uid="uid://dkx7xsfaa3kbj" path="res://resources/themes/text_theme.tres" id="10_pm3ni"]
 [ext_resource type="Texture2D" uid="uid://dahmcg6c4vu1t" path="res://assets/textures/tuda.png" id="11_y6deb"]
+[ext_resource type="Resource" uid="uid://cmydxuk8856va" path="res://resources/book_pages/page3_more.tres" id="12_gqmmt"]
 [ext_resource type="Texture2D" uid="uid://chry2egjw4uim" path="res://assets/textures/close.png" id="12_og1vs"]
 [ext_resource type="Script" uid="uid://cga6l2fob5ljf" path="res://scripts/note_contents.gd" id="13_2wyq8"]
+[ext_resource type="Resource" uid="uid://cjgcfbsl8t0qc" path="res://resources/book_pages/page4_nature.tres" id="13_yc10j"]
+[ext_resource type="Resource" uid="uid://bpweeicgbpj3n" path="res://resources/book_pages/page5_bird.tres" id="14_jscy8"]
 [ext_resource type="Script" uid="uid://do6nusuhedgym" path="res://scripts/audio_stream_player.gd" id="14_vxglm"]
 [ext_resource type="Script" uid="uid://cwhoyqi67mgj3" path="res://scripts/text_resize.gd" id="15_jbj1t"]
+[ext_resource type="Resource" uid="uid://cmm3v138th73t" path="res://resources/book_pages/page2_night.tres" id="15_muem4"]
+[ext_resource type="Resource" uid="uid://bb17n5fahqihp" path="res://resources/book_pages/album_page1.tres" id="19_yc10j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbj1t"]
+content_margin_left = 90.0
+content_margin_top = 90.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbj1t"]
+bg_color = Color(0.588235, 0.443137, 0.345098, 0.807843)
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -79,7 +91,7 @@ texture_focused = ExtResource("5_dp3eg")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("4_muem4")
-panel = NodePath("../BookContents")
+panel = NodePath("../AlbumContents")
 metadata/_edit_use_anchors_ = true
 
 [node name="Note" type="TextureButton" parent="." node_paths=PackedStringArray("panel")]
@@ -101,6 +113,14 @@ script = ExtResource("4_muem4")
 panel = NodePath("../NoteContents")
 metadata/_edit_use_anchors_ = true
 
+[node name="MainClose" type="Button" parent="."]
+layout_mode = 0
+offset_right = 602.0
+offset_bottom = 602.0
+scale = Vector2(0.4, 0.4)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jbj1t")
+icon = ExtResource("12_og1vs")
+
 [node name="BookContents" type="Panel" parent="." node_paths=PackedStringArray("player")]
 visible = false
 layout_mode = 1
@@ -109,8 +129,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jbj1t")
 script = ExtResource("7_gqmmt")
-pages = Array[ExtResource("8_yc10j")]([ExtResource("9_jscy8")])
+pages = Array[ExtResource("8_yc10j")]([ExtResource("9_jscy8"), ExtResource("15_muem4"), ExtResource("12_gqmmt"), ExtResource("13_yc10j"), ExtResource("14_jscy8")])
 player = NodePath("../AudioStreamPlayer")
 
 [node name="Image" type="TextureRect" parent="BookContents"]
@@ -146,10 +167,10 @@ anchors_preset = -1
 anchor_top = 0.907
 anchor_right = 0.052
 anchor_bottom = 1.0
-offset_left = 201.0
-offset_top = 199.88
-offset_right = 201.32
-offset_bottom = 199.0
+offset_left = 3239.0
+offset_top = 166.88
+offset_right = 3239.32
+offset_bottom = 166.0
 grow_vertical = 0
 rotation = 3.14159
 texture_normal = ExtResource("11_y6deb")
@@ -163,8 +184,10 @@ anchor_left = 0.948
 anchor_top = 0.907
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -0.320313
-offset_top = 0.879883
+offset_left = -311.32
+offset_top = -31.12
+offset_right = -311.0
+offset_bottom = -32.0
 grow_horizontal = 0
 grow_vertical = 0
 texture_normal = ExtResource("11_y6deb")
@@ -176,11 +199,121 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.052
 anchor_bottom = 0.093
-offset_right = 0.319992
-offset_bottom = -0.880005
+offset_left = 3568.0
+offset_top = 1890.0
+offset_right = 3644.32
+offset_bottom = 1965.12
 texture_normal = ExtResource("12_og1vs")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Title" type="RichTextLabel" parent="BookContents"]
+layout_mode = 0
+offset_left = 2017.0
+offset_top = 416.0
+offset_right = 3738.0
+offset_bottom = 807.0
+theme = ExtResource("10_pm3ni")
+theme_override_font_sizes/normal_font_size = 150
+bbcode_enabled = true
+text = "[center]Сосна[/center]"
+
+[node name="AlbumContents" type="Panel" parent="." node_paths=PackedStringArray("player")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jbj1t")
+script = ExtResource("7_gqmmt")
+pages = Array[ExtResource("8_yc10j")]([ExtResource("19_yc10j")])
+player = NodePath("../AudioStreamPlayer")
+
+[node name="Image" type="TextureRect" parent="AlbumContents"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_right = 0.48
+anchor_bottom = 1.0
+grow_vertical = 2
+texture = ExtResource("10_jkv2x")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Description" type="RichTextLabel" parent="AlbumContents"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.52
+anchor_right = 0.98
+anchor_bottom = 1.0
+theme = ExtResource("10_pm3ni")
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+fit_content = true
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+threaded = true
+script = ExtResource("15_jbj1t")
+
+[node name="Back" type="TextureButton" parent="AlbumContents"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.907
+anchor_right = 0.052
+anchor_bottom = 1.0
+offset_left = 3239.0
+offset_top = 166.88
+offset_right = 3239.32
+offset_bottom = 166.0
+grow_vertical = 0
+rotation = 3.14159
+texture_normal = ExtResource("11_y6deb")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Next" type="TextureButton" parent="AlbumContents"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.948
+anchor_top = 0.907
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -311.32
+offset_top = -31.12
+offset_right = -311.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("11_y6deb")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Close" type="TextureButton" parent="AlbumContents"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.052
+anchor_bottom = 0.093
+offset_left = 3568.0
+offset_top = 1890.0
+offset_right = 3644.32
+offset_bottom = 1965.12
+texture_normal = ExtResource("12_og1vs")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Title" type="RichTextLabel" parent="AlbumContents"]
+layout_mode = 0
+offset_left = 2017.0
+offset_top = 411.0
+offset_right = 3738.0
+offset_bottom = 807.0
+theme = ExtResource("10_pm3ni")
+theme_override_font_sizes/normal_font_size = 150
+bbcode_enabled = true
+text = "[center]Сосна[/center]"
 
 [node name="NoteContents" type="Panel" parent="."]
 visible = false
@@ -237,8 +370,12 @@ stretch_mode = 0
 script = ExtResource("14_vxglm")
 
 [connection signal="pressed" from="Book" to="Book" method="_on_pressed"]
-[connection signal="pressed" from="KidsAlbum" to="KidsAlbum" method="_on_pressed"]
+[connection signal="pressed" from="KidsAlbum" to="." method="_pressed"]
+[connection signal="pressed" from="MainClose" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="BookContents/Back" to="BookContents" method="_on_back_pressed"]
 [connection signal="pressed" from="BookContents/Next" to="BookContents" method="_on_next_pressed"]
 [connection signal="pressed" from="BookContents/Close" to="BookContents" method="_on_close_pressed"]
+[connection signal="pressed" from="AlbumContents/Back" to="AlbumContents" method="_on_back_pressed"]
+[connection signal="pressed" from="AlbumContents/Next" to="AlbumContents" method="_on_next_pressed"]
+[connection signal="pressed" from="AlbumContents/Close" to="AlbumContents" method="_on_close_pressed"]
 [connection signal="pressed" from="NoteContents/Close" to="NoteContents" method="_on_close_pressed"]
