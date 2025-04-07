@@ -1,0 +1,120 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfwedf0bfurdu"]
+
+[ext_resource type="Texture2D" uid="uid://dto7mxseamlet" path="res://assets/textures/menu-background.png" id="1_con2f"]
+[ext_resource type="FontFile" uid="uid://csly5g6rewojw" path="res://assets/fonts/font-evgeniya.ttf" id="1_mhnvy"]
+
+[sub_resource type="GDScript" id="GDScript_vjb58"]
+script/source = "extends Control
+
+
+func _on_go_game_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/main.tscn\")
+
+
+func _on_settings_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_exit_pressed() -> void:
+	get_tree().quit()
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_con2f"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g3eks"]
+texture = ExtResource("1_con2f")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjb58"]
+bg_color = Color(0.792157, 0.105882, 0.0745098, 1)
+border_width_left = 9
+border_width_top = 9
+border_width_right = 9
+border_width_bottom = 9
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = SubResource("GDScript_vjb58")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="Panel" parent="CanvasLayer"]
+offset_right = 3841.0
+offset_bottom = 2173.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_con2f")
+
+[node name="Image" type="Panel" parent="CanvasLayer"]
+offset_left = 2012.0
+offset_top = 946.0
+offset_right = 3679.0
+offset_bottom = 2103.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_g3eks")
+
+[node name="Title1" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 246.0
+offset_top = 222.0
+offset_right = 4083.0
+offset_bottom = 984.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_mhnvy")
+theme_override_font_sizes/normal_font_size = 160
+text = "Выставка детских рисунков Жени Шавровой
+"
+
+[node name="Title2" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 704.0
+offset_top = 432.0
+offset_right = 4541.0
+offset_bottom = 1194.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_mhnvy")
+theme_override_font_sizes/normal_font_size = 110
+text = "и других детей-учатников блокады Ленинграда
+"
+
+[node name="GoGame" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.0666667
+anchor_top = 0.62963
+anchor_right = 0.295833
+anchor_bottom = 0.711111
+theme_override_fonts/font = ExtResource("1_mhnvy")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_vjb58")
+text = "Посетить выставку"
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.0666667
+anchor_top = 0.748148
+anchor_right = 0.295833
+anchor_bottom = 0.82963
+offset_bottom = 0.00012207
+theme_override_fonts/font = ExtResource("1_mhnvy")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_vjb58")
+text = "Настройки"
+metadata/_edit_use_anchors_ = true
+
+[node name="Exit" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.0666667
+anchor_top = 0.866667
+anchor_right = 0.295833
+anchor_bottom = 0.948148
+theme_override_fonts/font = ExtResource("1_mhnvy")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_vjb58")
+text = "Выйти "
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="CanvasLayer/GoGame" to="." method="_on_go_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]

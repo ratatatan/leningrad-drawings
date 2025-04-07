@@ -1,7 +1,8 @@
 [gd_resource type="Theme" format=3 uid="uid://dkx7xsfaa3kbj"]
 
 [resource]
-default_font_size = 20
+default_base_scale = 2.0
+default_font_size = 23
 RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
 RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
 RichTextLabel/colors/table_odd_row_bg = Color(0, 0, 0, 1)
