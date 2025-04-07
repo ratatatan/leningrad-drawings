@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cspuomd1ysgr4"]
+[gd_scene load_steps=9 format=3 uid="uid://cspuomd1ysgr4"]
 
 [ext_resource type="Script" uid="uid://naqy6j2av4cc" path="res://scripts/options.gd" id="1_kv8mn"]
 [ext_resource type="FontFile" uid="uid://csly5g6rewojw" path="res://assets/fonts/font-evgeniya.ttf" id="2_2iy26"]
@@ -8,10 +8,13 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kp4ld"]
 bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2iy26"]
-content_margin_left = 90.0
-content_margin_top = 90.0
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kv8mn"]
+bg_color = Color(0.380325, 0.627651, 0.810656, 0.607843)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sggn"]
+bg_color = Color(0.374853, 0.624462, 0.83651, 0.270588)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e6vpq"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -30,6 +33,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kp4ld")
 
+[node name="MainClose" type="Button" parent="CanvasLayer/Background"]
+offset_right = 520.0
+offset_bottom = 520.0
+scale = Vector2(0.4, 0.4)
+theme_override_styles/hover = SubResource("StyleBoxFlat_kv8mn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1sggn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e6vpq")
+icon = ExtResource("2_yjkok")
+
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_left = 0.0255208
@@ -44,13 +56,6 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_2iy26")
 theme_override_font_sizes/normal_font_size = 90
 text = "		Годы Великой Отечественной войны и блокадного Ленинграда являются невероятно трагичным периодом истории нашей страны. Уже в годы войны и блокады одной из форм проживания трагедии стали дневники, а дети показывали свои переживания также и с помощью рисунков. Наш проект нацелен на показ трагедии целого народа через историю детства и погружение зрителя в контекст с помощью показа выставки будто бы глазами ребенка. Это позволяет пользователям прочувствовать весь спектр эмоций, который приходилось переживать маленьким жителям блокадного Ленинграда."
-
-[node name="Button" type="Button" parent="CanvasLayer"]
-offset_right = 520.0
-offset_bottom = 520.0
-scale = Vector2(0.4, 0.4)
-theme_override_styles/normal = SubResource("StyleBoxFlat_2iy26")
-icon = ExtResource("2_yjkok")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer"]
 anchors_preset = -1
@@ -138,4 +143,4 @@ text = "Кузнецова Виталия
 Толкачев Тимур"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="CanvasLayer/Background/MainClose" to="." method="_on_close_pressed"]

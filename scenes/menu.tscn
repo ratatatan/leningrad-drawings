@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfwedf0bfurdu"]
+[gd_scene load_steps=9 format=3 uid="uid://cfwedf0bfurdu"]
 
 [ext_resource type="Texture2D" uid="uid://dto7mxseamlet" path="res://assets/textures/menu-background.png" id="1_con2f"]
 [ext_resource type="FontFile" uid="uid://csly5g6rewojw" path="res://assets/fonts/font-evgeniya.ttf" id="1_mhnvy"]
@@ -24,6 +24,30 @@ bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g3eks"]
 texture = ExtResource("1_con2f")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhnvy"]
+bg_color = Color(0.22475, 3.85046e-06, 0.999822, 1)
+border_width_left = 9
+border_width_top = 9
+border_width_right = 9
+border_width_bottom = 9
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ytvr"]
+bg_color = Color(0.0608181, 0, 0.423753, 1)
+border_width_left = 9
+border_width_top = 9
+border_width_right = 9
+border_width_bottom = 9
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjb58"]
 bg_color = Color(0.792157, 0.105882, 0.0745098, 1)
@@ -98,6 +122,8 @@ anchor_right = 0.295833
 anchor_bottom = 0.711111
 theme_override_fonts/font = ExtResource("1_mhnvy")
 theme_override_font_sizes/font_size = 85
+theme_override_styles/hover = SubResource("StyleBoxFlat_mhnvy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4ytvr")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vjb58")
 text = "Посетить выставку"
 metadata/_edit_use_anchors_ = true
@@ -110,6 +136,8 @@ anchor_right = 0.295833
 anchor_bottom = 0.82963
 theme_override_fonts/font = ExtResource("1_mhnvy")
 theme_override_font_sizes/font_size = 85
+theme_override_styles/hover = SubResource("StyleBoxFlat_mhnvy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4ytvr")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vjb58")
 text = "О выставке"
 metadata/_edit_use_anchors_ = true
@@ -122,6 +150,8 @@ anchor_right = 0.295833
 anchor_bottom = 0.948148
 theme_override_fonts/font = ExtResource("1_mhnvy")
 theme_override_font_sizes/font_size = 85
+theme_override_styles/hover = SubResource("StyleBoxFlat_mhnvy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4ytvr")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vjb58")
 text = "Выйти "
 metadata/_edit_use_anchors_ = true

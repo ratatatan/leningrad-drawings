@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b2yx02mwauxqv"]
+[gd_scene load_steps=26 format=3 uid="uid://b2yx02mwauxqv"]
 
 [ext_resource type="Script" uid="uid://bp11yuqa2xrqy" path="res://scripts/main.gd" id="1_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://dmnv853l3usq" path="res://assets/textures/wood.png" id="2_jkv2x"]
@@ -22,9 +22,13 @@
 [ext_resource type="Resource" uid="uid://cmm3v138th73t" path="res://resources/book_pages/page2_night.tres" id="15_muem4"]
 [ext_resource type="Resource" uid="uid://bb17n5fahqihp" path="res://resources/book_pages/album_page1.tres" id="19_yc10j"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbj1t"]
-content_margin_left = 90.0
-content_margin_top = 90.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jscy8"]
+bg_color = Color(0.380325, 0.627651, 0.810656, 0.607843)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yc10j"]
+bg_color = Color(0.374853, 0.624462, 0.83651, 0.270588)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yc10j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbj1t"]
 bg_color = Color(0.588235, 0.443137, 0.345098, 0.807843)
@@ -114,11 +118,13 @@ panel = NodePath("../NoteContents")
 metadata/_edit_use_anchors_ = true
 
 [node name="MainClose" type="Button" parent="."]
-layout_mode = 0
-offset_right = 602.0
-offset_bottom = 602.0
+layout_mode = 1
+offset_right = 520.0
+offset_bottom = 520.0
 scale = Vector2(0.4, 0.4)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_jbj1t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jscy8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
 icon = ExtResource("12_og1vs")
 
 [node name="BookContents" type="Panel" parent="." node_paths=PackedStringArray("player")]
@@ -161,62 +167,50 @@ vertical_alignment = 1
 threaded = true
 script = ExtResource("15_jbj1t")
 
-[node name="Back" type="TextureButton" parent="BookContents"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.907
-anchor_right = 0.052
-anchor_bottom = 1.0
-offset_left = 3239.0
-offset_top = 166.88
-offset_right = 3239.32
-offset_bottom = 166.0
-grow_vertical = 0
-rotation = 3.14159
-texture_normal = ExtResource("11_y6deb")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Next" type="TextureButton" parent="BookContents"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.948
-anchor_top = 0.907
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -311.32
-offset_top = -31.12
-offset_right = -311.0
-offset_bottom = -32.0
-grow_horizontal = 0
-grow_vertical = 0
-texture_normal = ExtResource("11_y6deb")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Close" type="TextureButton" parent="BookContents"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.052
-anchor_bottom = 0.093
-offset_left = 3568.0
-offset_top = 1890.0
-offset_right = 3644.32
-offset_bottom = 1965.12
-texture_normal = ExtResource("12_og1vs")
-ignore_texture_size = true
-stretch_mode = 0
-
 [node name="Title" type="RichTextLabel" parent="BookContents"]
 layout_mode = 0
 offset_left = 2017.0
-offset_top = 416.0
+offset_top = 396.0
 offset_right = 3738.0
-offset_bottom = 807.0
+offset_bottom = 842.0
 theme = ExtResource("10_pm3ni")
 theme_override_font_sizes/normal_font_size = 150
 bbcode_enabled = true
 text = "[center]Сосна[/center]"
+
+[node name="Next" type="Button" parent="BookContents"]
+offset_left = 3352.0
+offset_top = 1924.0
+offset_right = 3872.0
+offset_bottom = 2444.0
+scale = Vector2(0.4, 0.4)
+theme_override_styles/hover = SubResource("StyleBoxFlat_jscy8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
+icon = ExtResource("11_y6deb")
+
+[node name="Back" type="Button" parent="BookContents"]
+offset_left = 3267.0
+offset_top = 2130.0
+offset_right = 3787.0
+offset_bottom = 2650.0
+rotation = 3.14159
+scale = Vector2(0.4, 0.4)
+theme_override_styles/hover = SubResource("StyleBoxFlat_jscy8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
+icon = ExtResource("11_y6deb")
+
+[node name="Close" type="Button" parent="BookContents"]
+offset_left = 3600.0
+offset_top = 1929.0
+offset_right = 4120.0
+offset_bottom = 2449.0
+scale = Vector2(0.4, 0.4)
+theme_override_styles/hover = SubResource("StyleBoxFlat_jscy8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
+icon = ExtResource("12_og1vs")
 
 [node name="AlbumContents" type="Panel" parent="." node_paths=PackedStringArray("player")]
 visible = false
@@ -258,62 +252,50 @@ vertical_alignment = 1
 threaded = true
 script = ExtResource("15_jbj1t")
 
-[node name="Back" type="TextureButton" parent="AlbumContents"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.907
-anchor_right = 0.052
-anchor_bottom = 1.0
-offset_left = 3239.0
-offset_top = 166.88
-offset_right = 3239.32
-offset_bottom = 166.0
-grow_vertical = 0
-rotation = 3.14159
-texture_normal = ExtResource("11_y6deb")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Next" type="TextureButton" parent="AlbumContents"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.948
-anchor_top = 0.907
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -311.32
-offset_top = -31.12
-offset_right = -311.0
-offset_bottom = -32.0
-grow_horizontal = 0
-grow_vertical = 0
-texture_normal = ExtResource("11_y6deb")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Close" type="TextureButton" parent="AlbumContents"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.052
-anchor_bottom = 0.093
-offset_left = 3568.0
-offset_top = 1890.0
-offset_right = 3644.32
-offset_bottom = 1965.12
-texture_normal = ExtResource("12_og1vs")
-ignore_texture_size = true
-stretch_mode = 0
-
 [node name="Title" type="RichTextLabel" parent="AlbumContents"]
 layout_mode = 0
 offset_left = 2017.0
-offset_top = 411.0
+offset_top = 391.0
 offset_right = 3738.0
-offset_bottom = 807.0
+offset_bottom = 837.0
 theme = ExtResource("10_pm3ni")
 theme_override_font_sizes/normal_font_size = 150
 bbcode_enabled = true
 text = "[center]Сосна[/center]"
+
+[node name="Next" type="Button" parent="AlbumContents"]
+offset_left = 3352.0
+offset_top = 1924.0
+offset_right = 3872.0
+offset_bottom = 2444.0
+scale = Vector2(0.4, 0.4)
+theme_override_styles/hover = SubResource("StyleBoxFlat_jscy8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
+icon = ExtResource("11_y6deb")
+
+[node name="Back" type="Button" parent="AlbumContents"]
+offset_left = 3267.0
+offset_top = 2130.0
+offset_right = 3787.0
+offset_bottom = 2650.0
+rotation = 3.14159
+scale = Vector2(0.4, 0.4)
+theme_override_styles/hover = SubResource("StyleBoxFlat_jscy8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
+icon = ExtResource("11_y6deb")
+
+[node name="Close" type="Button" parent="AlbumContents"]
+offset_left = 3600.0
+offset_top = 1929.0
+offset_right = 4120.0
+offset_bottom = 2449.0
+scale = Vector2(0.4, 0.4)
+theme_override_styles/hover = SubResource("StyleBoxFlat_jscy8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
+icon = ExtResource("12_og1vs")
 
 [node name="NoteContents" type="Panel" parent="."]
 visible = false
@@ -372,10 +354,10 @@ script = ExtResource("14_vxglm")
 [connection signal="pressed" from="Book" to="Book" method="_on_pressed"]
 [connection signal="pressed" from="KidsAlbum" to="." method="_pressed"]
 [connection signal="pressed" from="MainClose" to="." method="_on_close_pressed"]
-[connection signal="pressed" from="BookContents/Back" to="BookContents" method="_on_back_pressed"]
 [connection signal="pressed" from="BookContents/Next" to="BookContents" method="_on_next_pressed"]
+[connection signal="pressed" from="BookContents/Back" to="BookContents" method="_on_back_pressed"]
 [connection signal="pressed" from="BookContents/Close" to="BookContents" method="_on_close_pressed"]
-[connection signal="pressed" from="AlbumContents/Back" to="AlbumContents" method="_on_back_pressed"]
 [connection signal="pressed" from="AlbumContents/Next" to="AlbumContents" method="_on_next_pressed"]
+[connection signal="pressed" from="AlbumContents/Back" to="AlbumContents" method="_on_back_pressed"]
 [connection signal="pressed" from="AlbumContents/Close" to="AlbumContents" method="_on_close_pressed"]
 [connection signal="pressed" from="NoteContents/Close" to="NoteContents" method="_on_close_pressed"]
