@@ -89,41 +89,45 @@ theme_override_font_sizes/normal_font_size = 120
 text = "Выставку подготовили студенты Университета ИТМО"
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 2301.0
-offset_top = 880.0
-offset_right = 4998.0
-offset_bottom = 1588.0
+offset_left = 2280.0
+offset_top = 835.0
+offset_right = 4977.0
+offset_bottom = 1543.0
 theme_override_colors/default_color = Color(0.756863, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_2iy26")
-theme_override_font_sizes/normal_font_size = 95
-text = "Креативные продюсеры:"
+theme_override_font_sizes/normal_font_size = 105
+text = "Креативная команда:"
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 2301.0
+offset_left = 2280.0
 offset_top = 1521.0
-offset_right = 4998.0
+offset_right = 4977.0
 offset_bottom = 2229.0
 theme_override_colors/default_color = Color(0.756863, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_2iy26")
-theme_override_font_sizes/normal_font_size = 95
+theme_override_font_sizes/normal_font_size = 105
 text = "Разработчики:"
 
 [node name="RichTextLabel6" type="RichTextLabel" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_left = 0.796268
 anchor_top = 0.701335
-anchor_right = 1.35122
-anchor_bottom = 1.48652
-offset_left = -706.667
-offset_top = -495.883
-offset_right = -706.667
-offset_bottom = -495.883
+anchor_right = 1.18481
+anchor_bottom = 0.957816
+offset_left = -727.667
+offset_top = -551.883
+offset_right = -727.667
+offset_bottom = -551.883
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 12
 theme_override_fonts/normal_font = ExtResource("2_2iy26")
-theme_override_font_sizes/normal_font_size = 80
-text = "Мосолова Полина - \"голос Жени\"
-Ковалёва София - \"руки Жени\"
-Марченко Дария - \"\""
+theme_override_fonts/bold_font = ExtResource("2_2iy26")
+theme_override_font_sizes/normal_font_size = 65
+theme_override_font_sizes/bold_font_size = 90
+bbcode_enabled = true
+text = "[b]Марченко Дария[/b] - разработка концепции выставки
+[b]Ковалёва София[/b]  - анализ экспонатов
+[b]Мосолова Полина[/b] - озвучка и запись аудиоматериалов"
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel7" type="RichTextLabel" parent="CanvasLayer"]
@@ -132,15 +136,18 @@ anchor_left = 0.796268
 anchor_top = 0.701335
 anchor_right = 1.35122
 anchor_bottom = 1.48652
-offset_left = -706.667
+offset_left = -727.667
 offset_top = 140.117
-offset_right = -706.667
+offset_right = -727.667
 offset_bottom = 140.117
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_2iy26")
-theme_override_font_sizes/normal_font_size = 80
-text = "Кузнецова Виталия
-Толкачев Тимур"
+theme_override_fonts/bold_font = ExtResource("2_2iy26")
+theme_override_font_sizes/normal_font_size = 65
+theme_override_font_sizes/bold_font_size = 90
+bbcode_enabled = true
+text = "[b]Кузнецова Виталия[/b]
+[b]Толкачев Тимур[/b]"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="CanvasLayer/Background/MainClose" to="." method="_on_close_pressed"]

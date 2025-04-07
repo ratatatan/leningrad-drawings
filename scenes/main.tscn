@@ -1,8 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://b2yx02mwauxqv"]
+[gd_scene load_steps=30 format=3 uid="uid://b2yx02mwauxqv"]
 
 [ext_resource type="Script" uid="uid://bp11yuqa2xrqy" path="res://scripts/main.gd" id="1_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://dmnv853l3usq" path="res://assets/textures/wood.png" id="2_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://cmwgkja8rjvs" path="res://assets/textures/book.png" id="3_jbj1t"]
+[ext_resource type="Theme" uid="uid://cieronx6gd47v" path="res://resources/themes/tooltip.tres" id="3_og1vs"]
 [ext_resource type="Script" uid="uid://0x2lcsx13dkn" path="res://scripts/readable.gd" id="4_muem4"]
 [ext_resource type="Texture2D" uid="uid://djrw8yr0jh0kv" path="res://assets/textures/kids-album.png" id="5_dp3eg"]
 [ext_resource type="Texture2D" uid="uid://mm73vriwrhl0" path="res://assets/textures/note.png" id="6_0ld40"]
@@ -21,6 +22,9 @@
 [ext_resource type="Script" uid="uid://cwhoyqi67mgj3" path="res://scripts/text_resize.gd" id="15_jbj1t"]
 [ext_resource type="Resource" uid="uid://cmm3v138th73t" path="res://resources/book_pages/page2_night.tres" id="15_muem4"]
 [ext_resource type="Resource" uid="uid://bb17n5fahqihp" path="res://resources/book_pages/album_page1.tres" id="19_yc10j"]
+[ext_resource type="Resource" uid="uid://bfqyl1w1yvx8q" path="res://resources/book_pages/album_page2.tres" id="20_y6deb"]
+[ext_resource type="Resource" uid="uid://ds4yywcmfg511" path="res://resources/book_pages/album_page3.tres" id="21_og1vs"]
+[ext_resource type="Resource" uid="uid://b7txud6l1ffon" path="res://resources/book_pages/album_page4.tres" id="22_2wyq8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jscy8"]
 bg_color = Color(0.380325, 0.627651, 0.810656, 0.607843)
@@ -62,6 +66,8 @@ anchor_bottom = 0.443
 offset_right = 43.946
 offset_bottom = -39.692
 rotation = 0.111701
+tooltip_text = "Альбом с рисунками Жени Шавровой"
+theme = ExtResource("3_og1vs")
 texture_normal = ExtResource("3_jbj1t")
 texture_pressed = ExtResource("3_jbj1t")
 texture_hover = ExtResource("3_jbj1t")
@@ -87,6 +93,8 @@ offset_bottom = 153.84
 grow_horizontal = 0
 grow_vertical = 2
 rotation = -0.363028
+tooltip_text = "Альбом с рисунками детей-участников блокады Ленинграда"
+theme = ExtResource("3_og1vs")
 texture_normal = ExtResource("5_dp3eg")
 texture_pressed = ExtResource("5_dp3eg")
 texture_hover = ExtResource("5_dp3eg")
@@ -106,6 +114,8 @@ anchor_top = 0.592
 anchor_right = 0.485
 anchor_bottom = 0.962
 rotation = -0.249582
+tooltip_text = "Тетрадка со сводкой о Великой отечественной войне и блокаде Ленинграда"
+theme = ExtResource("3_og1vs")
 texture_normal = ExtResource("6_0ld40")
 texture_pressed = ExtResource("6_0ld40")
 texture_hover = ExtResource("6_0ld40")
@@ -222,7 +232,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jbj1t")
 script = ExtResource("7_gqmmt")
-pages = Array[ExtResource("8_yc10j")]([ExtResource("19_yc10j")])
+pages = Array[ExtResource("8_yc10j")]([ExtResource("19_yc10j"), ExtResource("20_y6deb"), ExtResource("21_og1vs"), ExtResource("22_2wyq8")])
 player = NodePath("../AudioStreamPlayer")
 
 [node name="Image" type="TextureRect" parent="AlbumContents"]
