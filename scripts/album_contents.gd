@@ -1,7 +1,7 @@
 extends ReadableContents
 
 @export var pages: Array[Page]
-@export var player : AudioStreamPlayer
+#@export var player : AudioStreamPlayer
 
 @onready var image := $Image
 @onready var desc := $Description
@@ -18,8 +18,7 @@ func open():
 
 func close():
 	visible = false
-	if player != null:
-		player.stop()
+	#player.stop()
 
 
 func load_page(page_index: int):
@@ -39,20 +38,16 @@ func load_page(page_index: int):
 	else:
 		title.text = Constants.lorem_ipsum
 	
-	if player != null and player.playing:
-		player.stop()
-	if new_page.audio:
-		player.stream = new_page.audio
-		player.play()
-	else:
-		player = null
+	#if player.playing:
+		#player.stop()
+	#if new_page.audio:
+		#player.stream = new_page.audio
+		#player.play()
 
 
 func change_page(page_index: int):
 	# Transition magic goes here .......
 	load_page(page_index)
-	if player != null:
-		player.play()
 
 
 func _on_back_pressed() -> void:
@@ -67,3 +62,7 @@ func _on_next_pressed() -> void:
 
 func _on_close_pressed() -> void:
 	close()
+
+
+func _on_kids_album_pressed() -> void:
+	open()
