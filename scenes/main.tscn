@@ -59,8 +59,9 @@ grow_vertical = 2
 texture = ExtResource("2_og1vs")
 expand_mode = 2
 
-[node name="Book" type="TextureButton" parent="." node_paths=PackedStringArray("panel")]
-layout_mode = 1
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Book" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("panel")]
 anchors_preset = -1
 anchor_left = 0.310937
 anchor_top = 0.564815
@@ -75,11 +76,9 @@ texture_normal = ExtResource("3_jbj1t")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("4_muem4")
-panel = NodePath("../BookContents")
-metadata/_edit_use_anchors_ = true
+panel = NodePath("../../Panels/BookContents")
 
-[node name="KidsAlbum" type="TextureButton" parent="." node_paths=PackedStringArray("panel")]
-layout_mode = 1
+[node name="KidsAlbum" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("panel")]
 anchors_preset = -1
 anchor_left = 0.7125
 anchor_top = -0.136111
@@ -99,11 +98,9 @@ texture_normal = ExtResource("6_2f3dj")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("4_muem4")
-panel = NodePath("../AlbumContents")
-metadata/_edit_use_anchors_ = true
+panel = NodePath("../../Panels/AlbumContents")
 
-[node name="Note" type="TextureButton" parent="." node_paths=PackedStringArray("panel")]
-layout_mode = 1
+[node name="Note" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("panel")]
 anchors_preset = -1
 anchor_left = 0.0541667
 anchor_top = 0.130093
@@ -116,11 +113,9 @@ texture_normal = ExtResource("6_0ld40")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("4_muem4")
-panel = NodePath("../NoteContents")
-metadata/_edit_use_anchors_ = true
+panel = NodePath("../../Panels/NoteContents")
 
-[node name="MainClose" type="Button" parent="."]
-layout_mode = 1
+[node name="MainClose" type="Button" parent="Buttons"]
 offset_right = 520.0
 offset_bottom = 520.0
 scale = Vector2(0.4, 0.4)
@@ -129,11 +124,9 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
 icon = ExtResource("12_og1vs")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-script = ExtResource("14_vxglm")
+[node name="Decorations" type="Node" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
+[node name="PaintingOils" type="TextureRect" parent="Decorations"]
 anchors_preset = -1
 anchor_left = 0.406613
 anchor_top = 0.237916
@@ -148,8 +141,7 @@ scale = Vector2(1.22424, 1.22424)
 texture = ExtResource("26_yq6so")
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 1
+[node name="Brushes" type="TextureRect" parent="Decorations"]
 anchors_preset = -1
 anchor_left = 0.504948
 anchor_top = 0.571759
@@ -161,15 +153,10 @@ scale = Vector2(0.72, 0.72)
 texture = ExtResource("27_fv21b")
 metadata/_edit_use_anchors_ = true
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-position = Vector2(281, 1714)
-energy = 0.37
-max_distance = 0.0
-script = ExtResource("28_tel4y")
+[node name="Panels" type="Node" parent="."]
 
-[node name="BookContents" type="Panel" parent="." node_paths=PackedStringArray("player")]
+[node name="BookContents" type="Panel" parent="Panels" node_paths=PackedStringArray("player")]
 visible = false
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -178,9 +165,9 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jbj1t")
 script = ExtResource("7_gqmmt")
 pages = Array[ExtResource("8_yc10j")]([ExtResource("9_jscy8"), ExtResource("15_muem4"), ExtResource("12_gqmmt"), ExtResource("13_yc10j"), ExtResource("14_jscy8")])
-player = NodePath("../AudioStreamPlayer")
+player = NodePath("../../AudioStreamPlayer")
 
-[node name="Image" type="TextureRect" parent="BookContents"]
+[node name="Image" type="TextureRect" parent="Panels/BookContents"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.02
@@ -191,7 +178,7 @@ texture = ExtResource("10_jkv2x")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="Description" type="RichTextLabel" parent="BookContents"]
+[node name="Description" type="RichTextLabel" parent="Panels/BookContents"]
 clip_contents = false
 layout_mode = 1
 anchors_preset = -1
@@ -207,7 +194,7 @@ vertical_alignment = 1
 threaded = true
 script = ExtResource("15_jbj1t")
 
-[node name="Title" type="RichTextLabel" parent="BookContents"]
+[node name="Title" type="RichTextLabel" parent="Panels/BookContents"]
 layout_mode = 0
 offset_left = 2017.0
 offset_top = 396.0
@@ -218,7 +205,7 @@ theme_override_font_sizes/normal_font_size = 150
 bbcode_enabled = true
 text = "[center]Сосна[/center]"
 
-[node name="Next" type="Button" parent="BookContents"]
+[node name="Next" type="Button" parent="Panels/BookContents"]
 layout_mode = 0
 offset_left = 3352.0
 offset_top = 1924.0
@@ -230,7 +217,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
 icon = ExtResource("11_y6deb")
 
-[node name="Back" type="Button" parent="BookContents"]
+[node name="Back" type="Button" parent="Panels/BookContents"]
 layout_mode = 0
 offset_left = 3267.0
 offset_top = 2130.0
@@ -243,7 +230,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
 icon = ExtResource("11_y6deb")
 
-[node name="Close" type="Button" parent="BookContents"]
+[node name="Close" type="Button" parent="Panels/BookContents"]
 layout_mode = 0
 offset_left = 3600.0
 offset_top = 1929.0
@@ -255,9 +242,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
 icon = ExtResource("12_og1vs")
 
-[node name="AlbumContents" type="Panel" parent="." node_paths=PackedStringArray("player")]
+[node name="AlbumContents" type="Panel" parent="Panels" node_paths=PackedStringArray("player")]
 visible = false
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -266,9 +252,9 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jbj1t")
 script = ExtResource("7_gqmmt")
 pages = Array[ExtResource("8_yc10j")]([ExtResource("19_yc10j"), ExtResource("20_y6deb"), ExtResource("21_og1vs"), ExtResource("22_2wyq8")])
-player = NodePath("../AudioStreamPlayer")
+player = NodePath("../../AudioStreamPlayer")
 
-[node name="Image" type="TextureRect" parent="AlbumContents"]
+[node name="Image" type="TextureRect" parent="Panels/AlbumContents"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.02
@@ -279,7 +265,7 @@ texture = ExtResource("10_jkv2x")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="Description" type="RichTextLabel" parent="AlbumContents"]
+[node name="Description" type="RichTextLabel" parent="Panels/AlbumContents"]
 clip_contents = false
 layout_mode = 1
 anchors_preset = -1
@@ -295,7 +281,7 @@ vertical_alignment = 1
 threaded = true
 script = ExtResource("15_jbj1t")
 
-[node name="Title" type="RichTextLabel" parent="AlbumContents"]
+[node name="Title" type="RichTextLabel" parent="Panels/AlbumContents"]
 layout_mode = 0
 offset_left = 2017.0
 offset_top = 391.0
@@ -306,7 +292,7 @@ theme_override_font_sizes/normal_font_size = 150
 bbcode_enabled = true
 text = "[center]Сосна[/center]"
 
-[node name="Next" type="Button" parent="AlbumContents"]
+[node name="Next" type="Button" parent="Panels/AlbumContents"]
 layout_mode = 0
 offset_left = 3352.0
 offset_top = 1924.0
@@ -318,7 +304,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
 icon = ExtResource("11_y6deb")
 
-[node name="Back" type="Button" parent="AlbumContents"]
+[node name="Back" type="Button" parent="Panels/AlbumContents"]
 layout_mode = 0
 offset_left = 3267.0
 offset_top = 2130.0
@@ -331,7 +317,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
 icon = ExtResource("11_y6deb")
 
-[node name="Close" type="Button" parent="AlbumContents"]
+[node name="Close" type="Button" parent="Panels/AlbumContents"]
 layout_mode = 0
 offset_left = 3600.0
 offset_top = 1929.0
@@ -343,9 +329,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
 icon = ExtResource("12_og1vs")
 
-[node name="NoteContents" type="Panel" parent="."]
+[node name="NoteContents" type="Panel" parent="Panels"]
 visible = false
-layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.736
 anchor_right = 1.0
@@ -355,7 +340,7 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("13_2wyq8")
 
-[node name="Description" type="RichTextLabel" parent="NoteContents"]
+[node name="Description" type="RichTextLabel" parent="Panels/NoteContents"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.01
@@ -374,7 +359,7 @@ text = "		Великая Отечественная война (1941–1945) с�
 fit_content = true
 script = ExtResource("15_jbj1t")
 
-[node name="Close" type="TextureButton" parent="NoteContents"]
+[node name="Close" type="TextureButton" parent="Panels/NoteContents"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.948
@@ -394,11 +379,20 @@ texture_focused = ExtResource("12_og1vs")
 ignore_texture_size = true
 stretch_mode = 0
 
-[connection signal="pressed" from="MainClose" to="." method="_on_close_pressed"]
-[connection signal="pressed" from="BookContents/Next" to="BookContents" method="_on_next_pressed"]
-[connection signal="pressed" from="BookContents/Back" to="BookContents" method="_on_back_pressed"]
-[connection signal="pressed" from="BookContents/Close" to="BookContents" method="_on_close_pressed"]
-[connection signal="pressed" from="AlbumContents/Next" to="AlbumContents" method="_on_next_pressed"]
-[connection signal="pressed" from="AlbumContents/Back" to="AlbumContents" method="_on_back_pressed"]
-[connection signal="pressed" from="AlbumContents/Close" to="AlbumContents" method="_on_close_pressed"]
-[connection signal="pressed" from="NoteContents/Close" to="NoteContents" method="_on_close_pressed"]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+position = Vector2(281, 1714)
+energy = 0.37
+max_distance = 0.0
+script = ExtResource("28_tel4y")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("14_vxglm")
+
+[connection signal="pressed" from="Buttons/MainClose" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Panels/BookContents/Next" to="Panels/BookContents" method="_on_next_pressed"]
+[connection signal="pressed" from="Panels/BookContents/Back" to="Panels/BookContents" method="_on_back_pressed"]
+[connection signal="pressed" from="Panels/BookContents/Close" to="Panels/BookContents" method="_on_close_pressed"]
+[connection signal="pressed" from="Panels/AlbumContents/Next" to="Panels/AlbumContents" method="_on_next_pressed"]
+[connection signal="pressed" from="Panels/AlbumContents/Back" to="Panels/AlbumContents" method="_on_back_pressed"]
+[connection signal="pressed" from="Panels/AlbumContents/Close" to="Panels/AlbumContents" method="_on_close_pressed"]
+[connection signal="pressed" from="Panels/NoteContents/Close" to="Panels/NoteContents" method="_on_close_pressed"]
