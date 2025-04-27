@@ -1,7 +1,7 @@
 [gd_scene load_steps=33 format=3 uid="uid://b2yx02mwauxqv"]
 
 [ext_resource type="Script" uid="uid://bp11yuqa2xrqy" path="res://scripts/main.gd" id="1_a8y0u"]
-[ext_resource type="Texture2D" uid="uid://c0aivvrlyeun4" path="res://assets/textures/desk.jpg" id="2_og1vs"]
+[ext_resource type="Texture2D" uid="uid://cicgr1xswjaap" path="res://assets/textures/tablecloth2-dark.png" id="2_2f3dj"]
 [ext_resource type="Texture2D" uid="uid://cmwgkja8rjvs" path="res://assets/textures/book.png" id="3_jbj1t"]
 [ext_resource type="Theme" uid="uid://cieronx6gd47v" path="res://resources/themes/tooltip.tres" id="3_og1vs"]
 [ext_resource type="Script" uid="uid://0x2lcsx13dkn" path="res://scripts/readable.gd" id="4_muem4"]
@@ -27,7 +27,7 @@
 [ext_resource type="Resource" uid="uid://b7txud6l1ffon" path="res://resources/book_pages/album_page4.tres" id="22_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://b5w2p65gdelyx" path="res://assets/textures/palette.png" id="26_yq6so"]
 [ext_resource type="Texture2D" uid="uid://db5ra4n6pvwlo" path="res://assets/textures/brushes.png" id="27_fv21b"]
-[ext_resource type="Script" uid="uid://bscds63ma5g8s" path="res://scripts/lighting.gd" id="28_tel4y"]
+[ext_resource type="Script" path="res://scripts/lighting.gd" id="28_tel4y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jscy8"]
 bg_color = Color(0.380325, 0.627651, 0.810656, 0.607843)
@@ -54,9 +54,11 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 34.0
+offset_bottom = 142.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_og1vs")
+texture = ExtResource("2_2f3dj")
 expand_mode = 2
 
 [node name="Buttons" type="Node" parent="."]
@@ -156,7 +158,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Panels" type="Node" parent="."]
 
 [node name="BookContents" type="Panel" parent="Panels" node_paths=PackedStringArray("player")]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -186,6 +187,7 @@ anchor_left = 0.52
 anchor_right = 0.98
 anchor_bottom = 1.0
 theme = ExtResource("10_pm3ni")
+theme_override_font_sizes/normal_font_size = 150
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 fit_content = true
 shortcut_keys_enabled = false
@@ -201,7 +203,7 @@ offset_top = 396.0
 offset_right = 3738.0
 offset_bottom = 842.0
 theme = ExtResource("10_pm3ni")
-theme_override_font_sizes/normal_font_size = 150
+theme_override_font_sizes/normal_font_size = 200
 bbcode_enabled = true
 text = "[center]Сосна[/center]"
 
@@ -273,6 +275,7 @@ anchor_left = 0.52
 anchor_right = 0.98
 anchor_bottom = 1.0
 theme = ExtResource("10_pm3ni")
+theme_override_font_sizes/normal_font_size = 150
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 fit_content = true
 shortcut_keys_enabled = false
@@ -288,7 +291,7 @@ offset_top = 391.0
 offset_right = 3738.0
 offset_bottom = 837.0
 theme = ExtResource("10_pm3ni")
-theme_override_font_sizes/normal_font_size = 150
+theme_override_font_sizes/normal_font_size = 200
 bbcode_enabled = true
 text = "[center]Сосна[/center]"
 
@@ -335,7 +338,7 @@ anchors_preset = -1
 anchor_top = 0.736
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -116.88
+offset_top = -521.76
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("13_2wyq8")
@@ -354,6 +357,10 @@ offset_bottom = 0.100006
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("10_pm3ni")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.176419, 0.176419, 0.176419, 1)
+theme_override_constants/outline_size = 28
+theme_override_font_sizes/normal_font_size = 90
 text = "		Великая Отечественная война (1941–1945) стала ключевой частью Второй мировой войны, где СССР противостоял нацистской Германии. Одной из самых трагических страниц стала блокада Ленинграда (8 сентября 1941 – 27 января 1944), длившаяся 872 дня. Город был окружён немецкими и финскими войсками, отрезан от снабжения, что привело к голоду, холоду и гибели около 1 млн человек. Единственной связью с \"Большой землёй\" стала \"Дорога жизни\" через Ладожское озеро. 
 		Несмотря на тяжелейшие условия, ленинградцы работали на заводах и защищали город. 18 января 1943 года блокада была частично прорвана, а 27 января 1944-го — полностью снята. Подвиг Ленинграда стал символом мужества и стойкости советского народа."
 fit_content = true
@@ -366,8 +373,8 @@ anchor_left = 0.948
 anchor_top = 0.707
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -0.320313
-offset_top = 0.326141
+offset_left = 25.6799
+offset_top = 165.956
 offset_bottom = -1.0
 grow_horizontal = 0
 grow_vertical = 0
