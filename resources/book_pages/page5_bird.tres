@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Page" load_steps=4 format=3 uid="uid://bpweeicgbpj3n"]
 
-[ext_resource type="AudioStream" uid="uid://clq68m7gbkq78" path="res://assets/audio/record_5_release.wav" id="1_ymus6"]
-[ext_resource type="Texture2D" uid="uid://deer75rg7p82a" path="res://assets/images/bird.png" id="2_r0xiv"]
+[ext_resource type="AudioStream" uid="uid://clq68m7gbkq78" path="res://assets/audio/diary_entries/record_5_release.wav" id="1_ymus6"]
+[ext_resource type="Texture2D" uid="uid://deer75rg7p82a" path="res://assets/textures/paintings/bird.png" id="2_r0xiv"]
 [ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/page.gd" id="3_q0fw8"]
 
 [resource]

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://naqy6j2av4cc" path="res://scripts/options.gd" id="1_kv8mn"]
 [ext_resource type="FontFile" uid="uid://csly5g6rewojw" path="res://assets/fonts/font-evgeniya.ttf" id="2_2iy26"]
-[ext_resource type="Texture2D" uid="uid://chry2egjw4uim" path="res://assets/textures/close.png" id="2_yjkok"]
+[ext_resource type="Texture2D" uid="uid://chry2egjw4uim" path="res://assets/textures/ui/close.png" id="2_yjkok"]
 [ext_resource type="FontFile" uid="uid://vcqwjpmj7nxq" path="res://assets/fonts/font2.ttf" id="3_1sggn"]
-[ext_resource type="Theme" uid="uid://cieronx6gd47v" path="res://resources/themes/tooltip.tres" id="3_2iy26"]
+[ext_resource type="Theme" uid="uid://cieronx6gd47v" path="res://resources/themes/main/tooltip.tres" id="3_2iy26"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kp4ld"]
 bg_color = Color(1, 1, 1, 1)

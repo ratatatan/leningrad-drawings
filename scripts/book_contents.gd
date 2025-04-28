@@ -18,7 +18,7 @@ func open():
 
 func close():
 	visible = false
-	if player != null:
+	if player:
 		player.stop()
 
 
@@ -39,19 +39,17 @@ func load_page(page_index: int):
 	else:
 		title.text = Constants.lorem_ipsum
 	
-	if player != null and player.playing:
+	if player and player.playing:
 		player.stop()
 	if new_page.audio:
 		player.stream = new_page.audio
 		player.play()
-	else:
-		player = null
 
 
 func change_page(page_index: int):
 	# Transition magic goes here .......
 	load_page(page_index)
-	if player != null:
+	if player:
 		player.play()
 
 
