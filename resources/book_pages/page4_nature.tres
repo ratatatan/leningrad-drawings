@@ -8,7 +8,6 @@ format = 3
 stereo = true
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3po08"]
-load_path = "res://.godot/imported/naturmort.png-873ea2584b783071176c548d473e3c60.ctex"
 
 [resource]
 script = ExtResource("3_wuny1")

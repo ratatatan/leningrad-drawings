@@ -1,14 +1,12 @@
 [gd_resource type="Resource" script_class="Page" load_steps=3 format=3 uid="uid://bb17n5fahqihp"]
 
+[ext_resource type="Texture2D" uid="uid://0vfoo4gkweu5" path="res://assets/textures/paintings/album-1.png" id="1_f67a6"]
 [ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/page.gd" id="3_6mpna"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ymydx"]
-load_path = "res://.godot/imported/album-1.png-4859649663df7aa2f350e7409930f35c.ctex"
 
 [resource]
 resource_local_to_scene = true
 script = ExtResource("3_6mpna")
-image = SubResource("CompressedTexture2D_ymydx")
+image = ExtResource("1_f67a6")
 text = "Нейфах Леня, 11 лет"
 title = "[center]Улица[/center]"
 metadata/_custom_type_script = "uid://dybs5mlhnc8ov"

@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://cieronx6gd47v" path="res://resources/themes/main/tooltip.tres" id="3_og1vs"]
 [ext_resource type="Texture2D" uid="uid://dgqytxx3qonpb" path="res://assets/textures/table/book_glow.png" id="4_2f3dj"]
 [ext_resource type="Script" uid="uid://0x2lcsx13dkn" path="res://scripts/readable.gd" id="4_muem4"]
-[ext_resource type="Texture2D" uid="uid://bp4ioo64dsk4y" path="res://assets/textures/table/book_shadown.png" id="5_yq6so"]
+[ext_resource type="Texture2D" uid="uid://dudsq0yluxfpm" path="res://assets/textures/table/book_shadow.png" id="5_yq6so"]
 [ext_resource type="Script" uid="uid://djrrtio3es14q" path="res://scripts/book_contents.gd" id="7_gqmmt"]
 [ext_resource type="Texture2D" uid="uid://cju5aato05ob8" path="res://assets/textures/table/oldbook_glow.png" id="7_yq6so"]
 [ext_resource type="Texture2D" uid="uid://clyvag24luset" path="res://assets/textures/table/oldbook_shadow.png" id="8_fv21b"]
@@ -257,7 +257,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
 icon = ExtResource("12_og1vs")
 
-[node name="AlbumContents" type="Panel" parent="Panels" node_paths=PackedStringArray("player")]
+[node name="AlbumContents" type="Panel" parent="Panels"]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -268,7 +268,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jbj1t")
 script = ExtResource("7_gqmmt")
 pages = Array[ExtResource("8_yc10j")]([ExtResource("19_yc10j"), ExtResource("20_y6deb"), ExtResource("21_og1vs"), ExtResource("22_2wyq8")])
-player = NodePath("../../AudioStreamPlayer")
 
 [node name="Image" type="TextureRect" parent="Panels/AlbumContents"]
 layout_mode = 1
