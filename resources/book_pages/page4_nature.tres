@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="Page" load_steps=4 format=4 uid="uid://cjgcfbsl8t0qc"]
 
+[ext_resource type="Texture2D" uid="uid://d13to53ym86m5" path="res://assets/textures/paintings/naturmort.png" id="1_3po08"]
 [ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/page.gd" id="3_wuny1"]
 
 [sub_resource type="AudioStreamWAV" id="AudioStreamWAV_2ispp"]
@@ -7,11 +8,9 @@ data = PackedByteArray("cW9hZgA32gwCAKxEFAAQKAAAAAAAAAAAAAAAAOAAQAAAAAAAAAAAAAAA
 format = 3
 stereo = true
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3po08"]
-
 [resource]
 script = ExtResource("3_wuny1")
-image = SubResource("CompressedTexture2D_3po08")
+image = ExtResource("1_3po08")
 text = "А на рисунке — то, чего так не хватало в голодные времена блокады в 1944 году: глиняный кувшин с водой, корзина со свежими овощами. Я рисовала по памяти, пытаясь удержать ощущение домашнего уюта, которого не было уже так давно."
 title = "[center]Натюрморт (1944)[/center]"
 audio = SubResource("AudioStreamWAV_2ispp")
