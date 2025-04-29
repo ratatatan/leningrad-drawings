@@ -1,17 +1,18 @@
-[gd_scene load_steps=35 format=3 uid="uid://b2yx02mwauxqv"]
+[gd_scene load_steps=36 format=3 uid="uid://b2yx02mwauxqv"]
 
 [ext_resource type="Script" uid="uid://bp11yuqa2xrqy" path="res://scripts/main.gd" id="1_a8y0u"]
-[ext_resource type="Texture2D" uid="uid://2bu4c8faupod" path="res://assets/textures/table/desk_new.jpg" id="2_2f3dj"]
+[ext_resource type="Texture2D" uid="uid://c0aivvrlyeun4" path="res://assets/textures/table/desk.jpg" id="2_tel4y"]
 [ext_resource type="Theme" uid="uid://cieronx6gd47v" path="res://resources/themes/main/tooltip.tres" id="3_og1vs"]
+[ext_resource type="Texture2D" uid="uid://bew6fju7uttyp" path="res://assets/textures/table/skatert.png" id="3_qkpxi"]
 [ext_resource type="Texture2D" uid="uid://dgqytxx3qonpb" path="res://assets/textures/table/book_glow.png" id="4_2f3dj"]
 [ext_resource type="Script" uid="uid://0x2lcsx13dkn" path="res://scripts/readable.gd" id="4_muem4"]
 [ext_resource type="Texture2D" uid="uid://dudsq0yluxfpm" path="res://assets/textures/table/book_shadow.png" id="5_yq6so"]
 [ext_resource type="Script" uid="uid://djrrtio3es14q" path="res://scripts/book_contents.gd" id="7_gqmmt"]
-[ext_resource type="Texture2D" uid="uid://cju5aato05ob8" path="res://assets/textures/table/oldbook_glow.png" id="7_yq6so"]
-[ext_resource type="Texture2D" uid="uid://clyvag24luset" path="res://assets/textures/table/oldbook_shadow.png" id="8_fv21b"]
+[ext_resource type="Texture2D" uid="uid://iiqntc287ihq" path="res://assets/textures/table/album_glow.png" id="8_tel4y"]
 [ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/page.gd" id="8_yc10j"]
 [ext_resource type="Texture2D" uid="uid://ddpuj5cpiyntg" path="res://assets/textures/table/george-lenta_glow.png" id="9_fv21b"]
 [ext_resource type="Resource" uid="uid://bwxccvwc0w1uw" path="res://resources/book_pages/page1_sosna.tres" id="9_jscy8"]
+[ext_resource type="Texture2D" uid="uid://dm5qcm5oolv82" path="res://assets/textures/table/album_shadow.png" id="9_qkpxi"]
 [ext_resource type="Texture2D" uid="uid://cijfm6likxvj4" path="res://icon.svg" id="10_jkv2x"]
 [ext_resource type="Theme" uid="uid://dkx7xsfaa3kbj" path="res://resources/themes/main/text_theme.tres" id="10_pm3ni"]
 [ext_resource type="Texture2D" uid="uid://cys8lsrnf6y6v" path="res://assets/textures/table/george-lenta_shadow.png" id="10_tel4y"]
@@ -58,20 +59,35 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_2f3dj")
+texture = ExtResource("2_tel4y")
+expand_mode = 2
+
+[node name="Foreground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.092
+anchor_right = 1.0
+anchor_bottom = 1.16
+offset_top = -0.279984
+offset_bottom = -0.600098
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_qkpxi")
 expand_mode = 2
 
 [node name="Buttons" type="Node" parent="."]
 
 [node name="Book" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("panel")]
 anchors_preset = -1
-anchor_left = 0.751823
-anchor_top = 0.143981
-anchor_right = 0.844474
-anchor_bottom = 0.513078
-offset_right = 194.22
-offset_bottom = -119.248
-rotation = 0.261799
+anchor_left = 0.668229
+anchor_top = -0.0643518
+anchor_right = 0.933016
+anchor_bottom = 0.491319
+offset_left = -2179.0
+offset_top = 599.0
+offset_right = -1984.78
+offset_bottom = 479.752
+rotation = -0.270872
 tooltip_text = "Альбом с рисунками Жени Шавровой"
 theme = ExtResource("3_og1vs")
 texture_normal = ExtResource("4_2f3dj")
@@ -85,21 +101,23 @@ metadata/_edit_use_anchors_ = true
 
 [node name="KidsAlbum" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("panel")]
 anchors_preset = -1
-anchor_left = 0.0872396
-anchor_top = 0.199074
-anchor_right = 0.545711
-anchor_bottom = 0.464469
-offset_right = 72.4695
-offset_bottom = 618.747
+anchor_left = 0.13724
+anchor_top = 0.308796
+anchor_right = 0.517326
+anchor_bottom = 0.48345
+offset_left = 1846.0
+offset_top = -516.0
+offset_right = 1918.47
+offset_bottom = 102.747
 grow_horizontal = 0
 grow_vertical = 2
-rotation = -0.261799
+rotation = 0.314042
 scale = Vector2(0.846794, 0.846794)
 tooltip_text = "Альбом с рисунками детей-участников блокады Ленинграда"
 theme = ExtResource("3_og1vs")
-texture_normal = ExtResource("7_yq6so")
-texture_pressed = ExtResource("8_fv21b")
-texture_hover = ExtResource("8_fv21b")
+texture_normal = ExtResource("8_tel4y")
+texture_pressed = ExtResource("9_qkpxi")
+texture_hover = ExtResource("9_qkpxi")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("4_muem4")
@@ -154,10 +172,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Brushes" type="TextureRect" parent="Decorations"]
 anchors_preset = -1
-anchor_left = 0.651823
-anchor_top = 0.74213
-anchor_right = 1.15665
-anchor_bottom = 0.982609
+anchor_left = 0.671094
+anchor_top = 0.801389
+anchor_right = 1.12254
+anchor_bottom = 0.946963
 offset_right = 32.4463
 offset_bottom = 1451.56
 rotation = -0.523598
@@ -301,7 +319,7 @@ anchor_top = 0.434259
 anchor_right = 0.979948
 anchor_bottom = 0.843982
 theme = ExtResource("10_pm3ni")
-theme_override_font_sizes/normal_font_size = 150
+theme_override_font_sizes/normal_font_size = 100
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 shortcut_keys_enabled = false
 horizontal_alignment = 1
