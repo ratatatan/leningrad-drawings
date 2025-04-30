@@ -3,6 +3,7 @@ extends ReadableContents
 @export var pages: Array[Page]
 @export var player : AudioStreamPlayer
 @export var pages_audio : AudioStreamPlayer
+@export var pages_sounds : Array[AudioStreamWAV]
 
 @onready var image := $Image
 @onready var desc := $Description
@@ -46,7 +47,8 @@ func init_page(page_index: int):
 		player.stop()
 	if new_page.audio:
 		player.stream = new_page.audio
-	pages_audio.stream = load("res://assets/audio/pages" + str(randi() % 3 + 1) + ".wav")
+	pages_audio.stream = pages_sounds.pick_random()
+	pages_audio.pitch_scale = randf_range(0.8, 1.2)
 
 
 func change_page(page_index: int):
@@ -54,7 +56,7 @@ func change_page(page_index: int):
 	init_page(page_index)
 	if pages_audio:
 		pages_audio.play()
-		await get_tree().create_timer(0.7).timeout
+		#await get_tree().create_timer(0.7).timeout
 	if player:
 		player.play()
 

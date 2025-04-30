@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://b2yx02mwauxqv"]
+[gd_scene load_steps=41 format=3 uid="uid://b2yx02mwauxqv"]
 
 [ext_resource type="Script" uid="uid://bp11yuqa2xrqy" path="res://scripts/main.gd" id="1_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://c0aivvrlyeun4" path="res://assets/textures/table/desk.jpg" id="2_tel4y"]
@@ -28,10 +28,12 @@
 [ext_resource type="Resource" uid="uid://bfqyl1w1yvx8q" path="res://resources/book_pages/album_page2.tres" id="20_y6deb"]
 [ext_resource type="Resource" uid="uid://ds4yywcmfg511" path="res://resources/book_pages/album_page3.tres" id="21_og1vs"]
 [ext_resource type="Resource" uid="uid://b7txud6l1ffon" path="res://resources/book_pages/album_page4.tres" id="22_2wyq8"]
+[ext_resource type="AudioStream" uid="uid://dbw3vhnoisikj" path="res://assets/audio/other/page_sounds/pages1.wav" id="22_j8jky"]
 [ext_resource type="Texture2D" uid="uid://dvuijhdm8hesq" path="res://assets/textures/ui/pages2.png" id="22_qkpxi"]
+[ext_resource type="AudioStream" uid="uid://bkhlmphvao0jy" path="res://assets/audio/other/page_sounds/pages2.wav" id="23_kmb1v"]
+[ext_resource type="AudioStream" uid="uid://cwydf7glhjl3b" path="res://assets/audio/other/page_sounds/pages3.wav" id="24_fuf3a"]
 [ext_resource type="Texture2D" uid="uid://b5w2p65gdelyx" path="res://assets/textures/table/palette.png" id="26_yq6so"]
 [ext_resource type="Texture2D" uid="uid://db5ra4n6pvwlo" path="res://assets/textures/table/brushes.png" id="27_fv21b"]
-[ext_resource type="Script" uid="uid://bscds63ma5g8s" path="res://scripts/lighting.gd" id="28_tel4y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jscy8"]
 bg_color = Color(0.380325, 0.627651, 0.810656, 0.607843)
@@ -204,6 +206,7 @@ script = ExtResource("7_gqmmt")
 pages = Array[ExtResource("8_yc10j")]([ExtResource("9_jscy8"), ExtResource("15_muem4"), ExtResource("12_gqmmt"), ExtResource("13_yc10j"), ExtResource("14_jscy8")])
 player = NodePath("../../AudioStreamPlayer")
 pages_audio = NodePath("../../AudioStreamPlayerPages")
+pages_sounds = Array[AudioStreamWAV]([ExtResource("22_j8jky"), ExtResource("23_kmb1v"), ExtResource("24_fuf3a")])
 
 [node name="Pages" type="TextureRect" parent="Panels/BookContents"]
 layout_mode = 1
@@ -311,6 +314,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_jbj1t")
 script = ExtResource("7_gqmmt")
 pages = Array[ExtResource("8_yc10j")]([ExtResource("19_yc10j"), ExtResource("20_y6deb"), ExtResource("21_og1vs"), ExtResource("22_2wyq8")])
 pages_audio = NodePath("../../AudioStreamPlayerPages")
+pages_sounds = Array[AudioStreamWAV]([ExtResource("22_j8jky"), ExtResource("23_kmb1v"), null])
 
 [node name="Pages" type="TextureRect" parent="Panels/AlbumContents"]
 layout_mode = 1
@@ -464,13 +468,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
 icon = ExtResource("12_og1vs")
 expand_icon = true
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
-position = Vector2(281, 1714)
-energy = 0.37
-max_distance = 0.0
-script = ExtResource("28_tel4y")
 
 [node name="AudioStreamPlayerPages" type="AudioStreamPlayer" parent="."]
 script = ExtResource("14_vxglm")
