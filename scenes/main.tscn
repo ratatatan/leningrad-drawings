@@ -341,6 +341,7 @@ expand_mode = 4
 stretch_mode = 5
 
 [node name="Title" type="RichTextLabel" parent="Panels/AlbumContents"]
+layout_mode = 0
 offset_left = 2065.0
 offset_top = 237.0
 offset_right = 3326.0
@@ -369,6 +370,7 @@ threaded = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Next" type="Button" parent="Panels/AlbumContents"]
+layout_mode = 0
 offset_left = 3331.0
 offset_top = 1897.0
 offset_right = 3851.0
@@ -380,6 +382,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
 icon = ExtResource("11_y6deb")
 
 [node name="Back" type="Button" parent="Panels/AlbumContents"]
+layout_mode = 0
 offset_left = 3246.0
 offset_top = 2103.0
 offset_right = 3766.0
@@ -392,6 +395,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
 icon = ExtResource("11_y6deb")
 
 [node name="Close" type="Button" parent="Panels/AlbumContents"]
+layout_mode = 0
 offset_left = 3579.0
 offset_top = 1902.0
 offset_right = 4099.0
@@ -449,6 +453,7 @@ text = "		Великая Отечественная война (1941–1945) с�
 fit_content = true
 
 [node name="Close" type="Button" parent="Panels/NoteContents"]
+layout_mode = 0
 offset_left = 3533.0
 offset_top = 1868.0
 offset_right = 4221.0
