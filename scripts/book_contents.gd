@@ -2,6 +2,7 @@ extends ReadableContents
 
 @export var pages: Array[Page]
 @export var player : AudioStreamPlayer
+@export var pages_audio : AudioStreamPlayer
 
 @onready var image := $Image
 @onready var desc := $Description
@@ -13,7 +14,8 @@ var current_page: int = 0:
 
 func open():
 	visible = true
-	load_page(current_page)
+	change_page(current_page)
+	
 
 
 func close():
@@ -22,7 +24,7 @@ func close():
 		player.stop()
 
 
-func load_page(page_index: int):
+func init_page(page_index: int):
 	var new_page := pages[page_index]
 	if new_page.image:
 		image.texture = new_page.image
@@ -43,12 +45,15 @@ func load_page(page_index: int):
 		player.stop()
 	if new_page.audio:
 		player.stream = new_page.audio
-		player.play()
+	pages_audio.stream = load("res://assets/audio/zvuk-perelistyivaniya-stranitsyi.wav")
 
 
 func change_page(page_index: int):
 	# Transition magic goes here .......
-	load_page(page_index)
+	init_page(page_index)
+	if pages_audio:
+		pages_audio.play()
+		await get_tree().create_timer(0.7).timeout
 	if player:
 		player.play()
 

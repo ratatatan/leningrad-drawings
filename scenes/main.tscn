@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://b2yx02mwauxqv"]
+[gd_scene load_steps=39 format=3 uid="uid://b2yx02mwauxqv"]
 
 [ext_resource type="Script" uid="uid://bp11yuqa2xrqy" path="res://scripts/main.gd" id="1_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://c0aivvrlyeun4" path="res://assets/textures/table/desk.jpg" id="2_tel4y"]
@@ -28,9 +28,10 @@
 [ext_resource type="Resource" uid="uid://bfqyl1w1yvx8q" path="res://resources/book_pages/album_page2.tres" id="20_y6deb"]
 [ext_resource type="Resource" uid="uid://ds4yywcmfg511" path="res://resources/book_pages/album_page3.tres" id="21_og1vs"]
 [ext_resource type="Resource" uid="uid://b7txud6l1ffon" path="res://resources/book_pages/album_page4.tres" id="22_2wyq8"]
+[ext_resource type="Texture2D" uid="uid://dvuijhdm8hesq" path="res://assets/textures/ui/pages2.png" id="22_qkpxi"]
 [ext_resource type="Texture2D" uid="uid://b5w2p65gdelyx" path="res://assets/textures/table/palette.png" id="26_yq6so"]
 [ext_resource type="Texture2D" uid="uid://db5ra4n6pvwlo" path="res://assets/textures/table/brushes.png" id="27_fv21b"]
-[ext_resource type="Script" uid="uid://bscds63ma5g8s" path="res://scripts/lighting.gd" id="28_tel4y"]
+[ext_resource type="Script" path="res://scripts/lighting.gd" id="28_tel4y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jscy8"]
 bg_color = Color(0.380325, 0.627651, 0.810656, 0.607843)
@@ -41,7 +42,12 @@ bg_color = Color(0.374853, 0.624462, 0.83651, 0.270588)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yc10j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbj1t"]
-bg_color = Color(0.588235, 0.443137, 0.345098, 0.807843)
+bg_color = Color(0.356863, 0.258824, 0.188235, 0.639216)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qkpxi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkpxi"]
+bg_color = Color(0.235294, 0.160784, 0.109804, 0.917647)
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -185,7 +191,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Panels" type="Node" parent="."]
 
-[node name="BookContents" type="Panel" parent="Panels" node_paths=PackedStringArray("player")]
+[node name="BookContents" type="Panel" parent="Panels" node_paths=PackedStringArray("player", "pages_audio")]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -197,6 +203,20 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_jbj1t")
 script = ExtResource("7_gqmmt")
 pages = Array[ExtResource("8_yc10j")]([ExtResource("9_jscy8"), ExtResource("15_muem4"), ExtResource("12_gqmmt"), ExtResource("13_yc10j"), ExtResource("14_jscy8")])
 player = NodePath("../../AudioStreamPlayer")
+pages_audio = NodePath("../../AudioStreamPlayerPages")
+
+[node name="Pages" type="TextureRect" parent="Panels/BookContents"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 197.0
+offset_top = 111.0
+offset_right = -198.0
+offset_bottom = -111.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_qkpxi")
 
 [node name="Image" type="TextureRect" parent="Panels/BookContents"]
 layout_mode = 1
@@ -204,6 +224,10 @@ anchors_preset = -1
 anchor_left = 0.02
 anchor_right = 0.48
 anchor_bottom = 1.0
+offset_left = 389.2
+offset_top = 267.0
+offset_right = -50.2
+offset_bottom = -270.0
 grow_vertical = 2
 texture = ExtResource("10_jkv2x")
 expand_mode = 4
@@ -211,12 +235,12 @@ stretch_mode = 5
 
 [node name="Title" type="RichTextLabel" parent="Panels/BookContents"]
 layout_mode = 0
-offset_left = 2017.0
-offset_top = 208.0
-offset_right = 3738.0
-offset_bottom = 938.0
+offset_left = 2065.0
+offset_top = 237.0
+offset_right = 3326.0
+offset_bottom = 772.0
 theme = ExtResource("10_pm3ni")
-theme_override_font_sizes/normal_font_size = 200
+theme_override_font_sizes/normal_font_size = 150
 bbcode_enabled = true
 text = "Сосна"
 scroll_active = false
@@ -226,10 +250,10 @@ vertical_alignment = 1
 [node name="Description" type="RichTextLabel" parent="Panels/BookContents"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.519876
-anchor_top = 0.407472
-anchor_right = 0.969282
-anchor_bottom = 0.79192
+anchor_left = 0.519792
+anchor_top = 0.364057
+anchor_right = 0.880729
+anchor_bottom = 0.830477
 offset_left = -0.00012207
 theme = ExtResource("10_pm3ni")
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -275,7 +299,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
 icon = ExtResource("12_og1vs")
 
-[node name="AlbumContents" type="Panel" parent="Panels"]
+[node name="AlbumContents" type="Panel" parent="Panels" node_paths=PackedStringArray("pages_audio")]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -286,6 +310,20 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jbj1t")
 script = ExtResource("7_gqmmt")
 pages = Array[ExtResource("8_yc10j")]([ExtResource("19_yc10j"), ExtResource("20_y6deb"), ExtResource("21_og1vs"), ExtResource("22_2wyq8")])
+pages_audio = NodePath("../../AudioStreamPlayerPages")
+
+[node name="Pages" type="TextureRect" parent="Panels/AlbumContents"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 197.0
+offset_top = 111.0
+offset_right = -198.0
+offset_bottom = -111.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_qkpxi")
 
 [node name="Image" type="TextureRect" parent="Panels/AlbumContents"]
 layout_mode = 1
@@ -293,46 +331,48 @@ anchors_preset = -1
 anchor_left = 0.02
 anchor_right = 0.48
 anchor_bottom = 1.0
+offset_left = 389.2
+offset_top = 267.0
+offset_right = -50.2
+offset_bottom = -270.0
 grow_vertical = 2
 texture = ExtResource("10_jkv2x")
 expand_mode = 4
 stretch_mode = 5
 
 [node name="Title" type="RichTextLabel" parent="Panels/AlbumContents"]
-layout_mode = 0
-offset_left = 2017.0
-offset_top = 208.0
-offset_right = 3738.0
-offset_bottom = 837.0
+offset_left = 2065.0
+offset_top = 237.0
+offset_right = 3326.0
+offset_bottom = 772.0
 theme = ExtResource("10_pm3ni")
-theme_override_font_sizes/normal_font_size = 200
+theme_override_font_sizes/normal_font_size = 150
 bbcode_enabled = true
 text = "Сосна"
+scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Description" type="RichTextLabel" parent="Panels/AlbumContents"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.520052
-anchor_top = 0.434259
-anchor_right = 0.979948
-anchor_bottom = 0.843982
+anchor_left = 0.519792
+anchor_top = 0.364057
+anchor_right = 0.880729
+anchor_bottom = 0.830477
+offset_left = -0.00012207
 theme = ExtResource("10_pm3ni")
-theme_override_font_sizes/normal_font_size = 100
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 shortcut_keys_enabled = false
 horizontal_alignment = 1
-vertical_alignment = 1
 threaded = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Next" type="Button" parent="Panels/AlbumContents"]
-layout_mode = 0
-offset_left = 3328.0
-offset_top = 1899.0
-offset_right = 3848.0
-offset_bottom = 2419.0
+offset_left = 3331.0
+offset_top = 1897.0
+offset_right = 3851.0
+offset_bottom = 2417.0
 scale = Vector2(0.4, 0.4)
 theme_override_styles/hover = SubResource("StyleBoxFlat_jscy8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
@@ -340,11 +380,10 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
 icon = ExtResource("11_y6deb")
 
 [node name="Back" type="Button" parent="Panels/AlbumContents"]
-layout_mode = 0
-offset_left = 3243.0
-offset_top = 2105.0
-offset_right = 3763.0
-offset_bottom = 2625.0
+offset_left = 3246.0
+offset_top = 2103.0
+offset_right = 3766.0
+offset_bottom = 2623.0
 rotation = 3.14159
 scale = Vector2(0.4, 0.4)
 theme_override_styles/hover = SubResource("StyleBoxFlat_jscy8")
@@ -353,11 +392,10 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
 icon = ExtResource("11_y6deb")
 
 [node name="Close" type="Button" parent="Panels/AlbumContents"]
-layout_mode = 0
-offset_left = 3576.0
-offset_top = 1904.0
-offset_right = 4096.0
-offset_bottom = 2424.0
+offset_left = 3579.0
+offset_top = 1902.0
+offset_right = 4099.0
+offset_bottom = 2422.0
 scale = Vector2(0.4, 0.4)
 theme_override_styles/hover = SubResource("StyleBoxFlat_jscy8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
@@ -370,12 +408,24 @@ anchors_preset = -1
 anchor_top = 0.736
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -521.76
+offset_top = -1591.76
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qkpxi")
 script = ExtResource("13_2wyq8")
 
-[node name="Description" type="RichTextLabel" parent="Panels/NoteContents"]
+[node name="Panel" type="Panel" parent="Panels/NoteContents"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.36124
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qkpxi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Description" type="RichTextLabel" parent="Panels/NoteContents/Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.01
@@ -383,9 +433,9 @@ anchor_top = 0.05
 anchor_right = 0.99
 anchor_bottom = 0.95
 offset_left = 56.8
-offset_top = 15.9
+offset_top = 4.4
 offset_right = -85.8
-offset_bottom = 0.100006
+offset_bottom = 11.6
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("10_pm3ni")
@@ -394,28 +444,21 @@ theme_override_colors/font_outline_color = Color(0.176419, 0.176419, 0.176419, 1
 theme_override_constants/outline_size = 28
 theme_override_font_sizes/normal_font_size = 90
 text = "		Великая Отечественная война (1941–1945) стала ключевой частью Второй мировой войны, где СССР противостоял нацистской Германии. Одной из самых трагических страниц стала блокада Ленинграда (8 сентября 1941 – 27 января 1944), длившаяся 872 дня. Город был окружён немецкими и финскими войсками, отрезан от снабжения, что привело к голоду, холоду и гибели около 1 млн человек. Единственной связью с \"Большой землёй\" стала \"Дорога жизни\" через Ладожское озеро. 
+
 		Несмотря на тяжелейшие условия, ленинградцы работали на заводах и защищали город. 18 января 1943 года блокада была частично прорвана, а 27 января 1944-го — полностью снята. Подвиг Ленинграда стал символом мужества и стойкости советского народа."
 fit_content = true
 
-[node name="Close" type="TextureButton" parent="Panels/NoteContents"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.946
-anchor_top = 0.813
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.35986
-offset_top = 0.203979
-grow_horizontal = 0
-grow_vertical = 0
-texture_normal = ExtResource("12_og1vs")
-texture_pressed = ExtResource("12_og1vs")
-texture_hover = ExtResource("12_og1vs")
-texture_disabled = ExtResource("12_og1vs")
-texture_focused = ExtResource("12_og1vs")
-ignore_texture_size = true
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
+[node name="Close" type="Button" parent="Panels/NoteContents"]
+offset_left = 3533.0
+offset_top = 1868.0
+offset_right = 4221.0
+offset_bottom = 2556.0
+scale = Vector2(0.4, 0.4)
+theme_override_styles/hover = SubResource("StyleBoxFlat_jscy8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
+icon = ExtResource("12_og1vs")
+expand_icon = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 visible = false
@@ -423,6 +466,9 @@ position = Vector2(281, 1714)
 energy = 0.37
 max_distance = 0.0
 script = ExtResource("28_tel4y")
+
+[node name="AudioStreamPlayerPages" type="AudioStreamPlayer" parent="."]
+script = ExtResource("14_vxglm")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 script = ExtResource("14_vxglm")
