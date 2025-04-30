@@ -8,6 +8,7 @@ extends ReadableContents
 @onready var desc := $Description
 @onready var title := $Title
 
+
 var current_page: int = 0:
 	set(x): current_page = clamp(x, 0, pages.size()-1)
 
@@ -45,7 +46,7 @@ func init_page(page_index: int):
 		player.stop()
 	if new_page.audio:
 		player.stream = new_page.audio
-	pages_audio.stream = load("res://assets/audio/zvuk-perelistyivaniya-stranitsyi.wav")
+	pages_audio.stream = load("res://assets/audio/pages" + str(randi() % 3 + 1) + ".wav")
 
 
 func change_page(page_index: int):
