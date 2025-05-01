@@ -1,0 +1,118 @@
+[gd_scene load_steps=17 format=3 uid="uid://b0kgahvf7r24"]
+
+[ext_resource type="Script" uid="uid://ch8oibryndoc1" path="res://scripts/settings_controls.gd" id="1_gjs24"]
+[ext_resource type="Texture2D" uid="uid://chry2egjw4uim" path="res://assets/textures/ui/close.png" id="2_gis3k"]
+[ext_resource type="FontFile" uid="uid://vcqwjpmj7nxq" path="res://assets/fonts/font2.ttf" id="3_83j8s"]
+[ext_resource type="Theme" uid="uid://cieronx6gd47v" path="res://resources/themes/main/tooltip.tres" id="4_gjs24"]
+[ext_resource type="Texture2D" uid="uid://biknhteet05rd" path="res://assets/textures/ui/grabber.png" id="5_83j8s"]
+[ext_resource type="FontFile" uid="uid://csly5g6rewojw" path="res://assets/fonts/font-evgeniya.ttf" id="5_am25x"]
+[ext_resource type="StyleBox" uid="uid://dhk11aptpjk17" path="res://resources/themes/settings/slider.tres" id="6_gjs24"]
+[ext_resource type="StyleBox" uid="uid://bapvylucxcfqn" path="res://resources/themes/settings/grabber_area.tres" id="7_am25x"]
+[ext_resource type="Theme" uid="uid://dkx7xsfaa3kbj" path="res://resources/themes/main/text_theme.tres" id="8_gjs24"]
+[ext_resource type="StyleBox" uid="uid://crq2siogunk4l" path="res://resources/themes/settings/panel.tres" id="10_1g033"]
+[ext_resource type="Texture2D" uid="uid://bp56fp73dbq63" path="res://assets/textures/ui/checked.png" id="10_uhhto"]
+[ext_resource type="Texture2D" uid="uid://c41efcyk8bw8n" path="res://assets/textures/ui/unchecked.png" id="11_1g033"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kp4ld"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kv8mn"]
+bg_color = Color(0.380325, 0.627651, 0.810656, 0.607843)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sggn"]
+bg_color = Color(0.374853, 0.624462, 0.83651, 0.270588)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e6vpq"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 3858.0
+offset_bottom = 2173.0
+script = ExtResource("1_gjs24")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kp4ld")
+
+[node name="MainClose" type="Button" parent="."]
+layout_mode = 0
+anchor_right = 0.0541667
+anchor_bottom = 0.0962963
+offset_right = 312.0
+offset_bottom = 312.0
+scale = Vector2(0.4, 0.4)
+theme_override_styles/hover = SubResource("StyleBoxFlat_kv8mn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1sggn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e6vpq")
+icon = ExtResource("2_gis3k")
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0539139
+anchor_top = 0.0124252
+anchor_right = 0.258601
+anchor_bottom = 0.0846474
+theme = ExtResource("4_gjs24")
+theme_override_colors/default_color = Color(0.756863, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_am25x")
+theme_override_font_sizes/normal_font_size = 150
+text = "Настройки"
+scroll_active = false
+
+[node name="Volume" type="Node" parent="."]
+
+[node name="Display" type="RichTextLabel" parent="Volume"]
+anchors_preset = -1
+anchor_left = 0.0541667
+anchor_top = 0.138889
+anchor_right = 0.448958
+anchor_bottom = 0.206019
+theme = ExtResource("8_gjs24")
+text = "Звук: "
+scroll_active = false
+metadata/_edit_use_anchors_ = true
+
+[node name="VolumeSlider" type="HSlider" parent="Volume"]
+anchors_preset = -1
+anchor_left = 0.0541667
+anchor_top = 0.206019
+anchor_right = 0.448958
+anchor_bottom = 0.273148
+theme_override_icons/grabber = ExtResource("5_83j8s")
+theme_override_icons/grabber_highlight = ExtResource("5_83j8s")
+theme_override_styles/slider = ExtResource("6_gjs24")
+theme_override_styles/grabber_area = ExtResource("7_am25x")
+theme_override_styles/grabber_area_highlight = ExtResource("7_am25x")
+value = 50.0
+rounded = true
+ticks_on_borders = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Animation" type="Node" parent="."]
+
+[node name="CheckButton" type="CheckButton" parent="Animation"]
+offset_left = 208.0
+offset_top = 609.0
+offset_right = 1724.0
+offset_bottom = 773.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_83j8s")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = ExtResource("10_1g033")
+theme_override_icons/checked = ExtResource("10_uhhto")
+theme_override_icons/unchecked = ExtResource("11_1g033")
+button_pressed = true
+text = "Анимации:"
+
+[connection signal="pressed" from="MainClose" to="." method="_on_close_pressed"]
+[connection signal="drag_ended" from="Volume/VolumeSlider" to="." method="_on_volume_slider_drag_ended"]
+[connection signal="toggled" from="Animation/CheckButton" to="." method="_on_check_button_toggled"]

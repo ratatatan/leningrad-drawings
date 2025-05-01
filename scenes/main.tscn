@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b2yx02mwauxqv"]
+[gd_scene load_steps=40 format=3 uid="uid://b2yx02mwauxqv"]
 
 [ext_resource type="Script" uid="uid://bp11yuqa2xrqy" path="res://scripts/main.gd" id="1_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://c0aivvrlyeun4" path="res://assets/textures/table/desk.jpg" id="2_tel4y"]
@@ -22,7 +22,6 @@
 [ext_resource type="Script" uid="uid://cga6l2fob5ljf" path="res://scripts/note_contents.gd" id="13_2wyq8"]
 [ext_resource type="Resource" uid="uid://cjgcfbsl8t0qc" path="res://resources/book_pages/page4_nature.tres" id="13_yc10j"]
 [ext_resource type="Resource" uid="uid://bpweeicgbpj3n" path="res://resources/book_pages/page5_bird.tres" id="14_jscy8"]
-[ext_resource type="Script" uid="uid://do6nusuhedgym" path="res://scripts/audio_stream_player.gd" id="14_vxglm"]
 [ext_resource type="Resource" uid="uid://cmm3v138th73t" path="res://resources/book_pages/page2_night.tres" id="15_muem4"]
 [ext_resource type="Resource" uid="uid://bb17n5fahqihp" path="res://resources/book_pages/album_page1.tres" id="19_yc10j"]
 [ext_resource type="Resource" uid="uid://bfqyl1w1yvx8q" path="res://resources/book_pages/album_page2.tres" id="20_y6deb"]
@@ -470,10 +469,8 @@ icon = ExtResource("12_og1vs")
 expand_icon = true
 
 [node name="AudioStreamPlayerPages" type="AudioStreamPlayer" parent="."]
-script = ExtResource("14_vxglm")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-script = ExtResource("14_vxglm")
 
 [connection signal="pressed" from="Buttons/MainClose" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Panels/BookContents/Next" to="Panels/BookContents" method="_on_next_pressed"]
