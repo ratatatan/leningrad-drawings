@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://cg4caviify2cx" path="res://assets/audio/diary_entries/record_3_school.wav" id="1_xfl4s"]
 [ext_resource type="Texture2D" uid="uid://p71j281lgc63" path="res://assets/textures/paintings/ujnoe-more.png" id="2_m1wr7"]
-[ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/page.gd" id="3_1k3ss"]
+[ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/game_objects/page.gd" id="3_1k3ss"]
 
 [resource]
 script = ExtResource("3_1k3ss")

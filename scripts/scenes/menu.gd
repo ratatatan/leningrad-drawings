@@ -6,11 +6,14 @@ var tween_background: Tween
 @onready var side_panel: Panel = $SidePanel
 @onready var title: Control = $Title
 @onready var background: TextureRect = $Background
-@onready var animation_player: AnimationPlayer = $Background/AnimationPlayer
+@onready var bg_animation: AnimationPlayer = $Background/AnimationPlayer
+@onready var title_animation: AnimationPlayer = $Title/AnimationPlayer
+
 
 
 func _ready() -> void:
-	animation_player.active = Settings.animations
+	bg_animation.active = Settings.animations
+	title_animation.active = Settings.animations
 	introduction()
 
 
@@ -28,6 +31,10 @@ func introduction() -> void:
 		
 		tween_elements.parallel() \
 			.tween_property(title, "position:y", 0.0, 0.5)
+		
+		await tween_elements.finished
+		
+	title_animation.play("title_animation")
 
 func transition() -> void:
 	Settings.menu_intro_enabled = false

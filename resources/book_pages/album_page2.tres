@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Page" load_steps=3 format=3 uid="uid://bfqyl1w1yvx8q"]
 
 [ext_resource type="Texture2D" uid="uid://cd8uqb682tr22" path="res://assets/textures/paintings/vasya_anisenok.png" id="1_ixys4"]
-[ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/page.gd" id="2_dv2fv"]
+[ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/game_objects/page.gd" id="2_dv2fv"]
 
 [resource]
 resource_local_to_scene = true

@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://cx3ifskw06uoy" path="res://assets/audio/diary_entries/record_2_attack.wav" id="1_apsd4"]
 [ext_resource type="Texture2D" uid="uid://do47rpeqxr10r" path="res://assets/textures/paintings/noch'-na-ujnom-beregu-kryma.png" id="2_5cvtw"]
-[ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/page.gd" id="3_dkg6j"]
+[ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/game_objects/page.gd" id="3_dkg6j"]
 
 [resource]
 script = ExtResource("3_dkg6j")
