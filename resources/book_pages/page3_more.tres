@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Page" load_steps=4 format=3 uid="uid://cmydxuk8856va"]
 
-[ext_resource type="AudioStream" uid="uid://cg4caviify2cx" path="res://assets/audio/diary_entries/record_3_school.wav" id="1_xfl4s"]
+[ext_resource type="Resource" uid="uid://d4f80ugpi0jfj" path="res://resources/subtitled_audio/page3_more_audio.tres" id="1_xfl4s"]
 [ext_resource type="Texture2D" uid="uid://p71j281lgc63" path="res://assets/textures/paintings/ujnoe-more.png" id="2_m1wr7"]
-[ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/game_objects/page.gd" id="3_1k3ss"]
+[ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/resources/page.gd" id="3_1k3ss"]
 
 [resource]
 script = ExtResource("3_1k3ss")

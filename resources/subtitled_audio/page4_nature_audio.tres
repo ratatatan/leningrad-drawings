@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SubtitledAudio" load_steps=3 format=3 uid="uid://b7udfayrevhbt"]
+
+[ext_resource type="Script" uid="uid://d4ns6jalujwmy" path="res://scripts/resources/subtitled_audio.gd" id="1_h0cl3"]
+[ext_resource type="AudioStream" uid="uid://dpujurriyt722" path="res://assets/audio/diary_entries/record_4_queue.wav" id="2_bwy1j"]
+
+[resource]
+script = ExtResource("1_h0cl3")
+lines = Array[String](["Line 1", "Lein 2", "Line 3"])
+delays = Array[float]([1.0, 1.0, 1.0])
+stream = ExtResource("2_bwy1j")
+metadata/_custom_type_script = "uid://d4ns6jalujwmy"

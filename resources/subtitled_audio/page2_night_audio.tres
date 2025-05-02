@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SubtitledAudio" load_steps=3 format=3 uid="uid://b681nnepy1bdb"]
+
+[ext_resource type="Script" uid="uid://d4ns6jalujwmy" path="res://scripts/resources/subtitled_audio.gd" id="1_7l71y"]
+[ext_resource type="AudioStream" uid="uid://cx3ifskw06uoy" path="res://assets/audio/diary_entries/record_2_attack.wav" id="2_3lr57"]
+
+[resource]
+script = ExtResource("1_7l71y")
+lines = Array[String](["Line 1", "Line 2", "Line 3"])
+delays = Array[float]([1.0, 1.0, 1.0])
+stream = ExtResource("2_3lr57")
+metadata/_custom_type_script = "uid://d4ns6jalujwmy"

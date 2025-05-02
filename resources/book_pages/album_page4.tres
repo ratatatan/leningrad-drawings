@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Page" load_steps=3 format=3 uid="uid://b7txud6l1ffon"]
 
 [ext_resource type="Texture2D" uid="uid://cbn31tllxcvw3" path="res://assets/textures/paintings/borisenkov-v-smolnyi.png" id="1_7d802"]
-[ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/game_objects/page.gd" id="2_tsib2"]
+[ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/resources/page.gd" id="2_tsib2"]
 
 [resource]
 resource_local_to_scene = true

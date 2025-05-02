@@ -4,8 +4,10 @@ extends ReadableContents
 
 var pages_sounds : Array[AudioStreamWAV]
 
-@onready var speech_player: AudioStreamPlayer = $"../../SpeechPlayer"
-@onready var sfx_player: AudioStreamPlayer = $"../../SFXPlayer"
+@onready var speech_player: AudioStreamPlayer = %SpeechPlayer
+@onready var sfx_player: AudioStreamPlayer = %SFXPlayer
+@onready var subtitles: Subtitles = %Subtitles
+
 @onready var image := $Image
 @onready var desc := $Description
 @onready var title := $Title
@@ -25,6 +27,8 @@ func open() -> void:
 
 func close() -> void:
 	visible = false
+	
+	subtitles.close_captions()
 	
 	sfx_player.stop()
 	speech_player.stop()
@@ -55,12 +59,14 @@ func init_page(page_index: int) -> void:
 	if speech_player.playing:
 		speech_player.stop()
 	if new_page.audio:
-		speech_player.stream = new_page.audio
+		speech_player.stream = new_page.audio.stream
+		if (new_page.audio.lines and new_page.audio.delays):
+			subtitles.preload_captions(new_page.audio.lines, new_page.audio.delays)
 	else:
 		speech_player.stream = null
 	
 	sfx_player.stream = pages_sounds.pick_random()
-	sfx_player.pitch_scale = randf_range(0.8, 1.2)
+	#sfx_player.pitch_scale = randf_range(0.8, 1.2)
 
 func open_on_page(page_index: int) -> void:
 	init_page(page_index)
@@ -72,6 +78,7 @@ func open_on_page(page_index: int) -> void:
 		await sfx_player.finished
 	
 	speech_player.play()
+	subtitles.display_captions()
 
 func update_page() -> void:
 	print("Changing page from %s to %s" % [last_page, current_page])
@@ -81,12 +88,11 @@ func update_page() -> void:
 	init_page(current_page)
 	
 	if AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("SFX")) != 0.0:
-		sfx_player.stream = \
-			preload("res://assets/audio/other/book_sounds/book-open.wav")
 		sfx_player.play()
 		await sfx_player.finished
 	
 	speech_player.play()
+	subtitles.display_captions()
 
 func _on_back_pressed() -> void:
 	current_page -= 1
