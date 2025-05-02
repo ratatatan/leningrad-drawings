@@ -5,7 +5,11 @@
 
 [resource]
 script = ExtResource("1_1da00")
-lines = Array[String](["1", "2", "3"])
-delays = Array[float]([1.0, 1.0, 1.0])
+lines = Dictionary[String, float]({
+"": 0.0,
+"Line 1": 1.0,
+"Line 2": 1.0,
+"Line 3": 1.0
+})
 stream = ExtResource("2_pducr")
 metadata/_custom_type_script = "uid://d4ns6jalujwmy"

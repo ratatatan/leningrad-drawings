@@ -4,10 +4,7 @@ extends ReadableContents
 
 var pages_sounds : Array[AudioStreamWAV]
 
-@onready var speech_player: AudioStreamPlayer = %SpeechPlayer
-@onready var sfx_player: AudioStreamPlayer = %SFXPlayer
-@onready var subtitles: Subtitles = %Subtitles
-
+@onready var main: Main = $"../.."
 @onready var image := $Image
 @onready var desc := $Description
 @onready var title := $Title
@@ -28,18 +25,16 @@ func open() -> void:
 func close() -> void:
 	visible = false
 	
-	subtitles.close_captions()
-	
-	sfx_player.stop()
-	speech_player.stop()
-	
-	speech_player.stream = null
-	sfx_player.stream = \
-		preload("res://assets/audio/other/book_sounds/close-book.wav")
-	sfx_player.play()
+	# Stop speech if its already playing
+	main.stop_speech()
+	main.stop_sfx()
+	await main.play_sfx(preload("res://assets/audio/other/book_sounds/close-book.wav"))
+	# Prevent speech from playing
+	main.stop_speech()
 
 func init_page(page_index: int) -> void:
 	var new_page := pages[page_index]
+	main.stop_speech()
 	
 	if new_page.image:
 		image.texture = new_page.image
@@ -55,30 +50,13 @@ func init_page(page_index: int) -> void:
 		title.text = new_page.title
 	else:
 		title.text = Constants.lorem_ipsum
-	
-	if speech_player.playing:
-		speech_player.stop()
-	if new_page.audio:
-		speech_player.stream = new_page.audio.stream
-		if (new_page.audio.lines and new_page.audio.delays):
-			subtitles.preload_captions(new_page.audio.lines, new_page.audio.delays)
-	else:
-		speech_player.stream = null
-	
-	sfx_player.stream = pages_sounds.pick_random()
-	#sfx_player.pitch_scale = randf_range(0.8, 1.2)
 
 func open_on_page(page_index: int) -> void:
 	init_page(page_index)
 	
-	if AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("SFX")) != 0.0:
-		sfx_player.stream = \
-			preload("res://assets/audio/other/book_sounds/book-open.wav")
-		sfx_player.play()
-		await sfx_player.finished
-	
-	speech_player.play()
-	subtitles.display_captions()
+	await main.play_sfx(preload("res://assets/audio/other/book_sounds/book-open.wav"))
+	if pages[page_index].audio:
+		main.play_speech(pages[page_index].audio)
 
 func update_page() -> void:
 	print("Changing page from %s to %s" % [last_page, current_page])
@@ -87,12 +65,9 @@ func update_page() -> void:
 	
 	init_page(current_page)
 	
-	if AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("SFX")) != 0.0:
-		sfx_player.play()
-		await sfx_player.finished
-	
-	speech_player.play()
-	subtitles.display_captions()
+	await main.play_sfx(pages_sounds.pick_random())
+	if pages[current_page].audio:
+		main.play_speech(pages[current_page].audio)
 
 func _on_back_pressed() -> void:
 	current_page -= 1
