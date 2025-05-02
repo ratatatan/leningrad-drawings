@@ -4,8 +4,8 @@ extends ReadableContents
 
 var pages_sounds : Array[AudioStreamWAV]
 
-@onready var sfx_player: AudioStreamPlayer = $"../../SFXPlayer"
 @onready var speech_player: AudioStreamPlayer = $"../../SpeechPlayer"
+@onready var sfx_player: AudioStreamPlayer = $"../../SFXPlayer"
 @onready var image := $Image
 @onready var desc := $Description
 @onready var title := $Title
@@ -15,7 +15,7 @@ var current_page: int = 0:
 var last_page: int = 0
 
 func _init() -> void:
-	for i in range(0, 21):
+	for i in range(1, 21):
 		pages_sounds.append(
 			load("res://assets/audio/other/book_sounds/pg%d.wav" % i))
 

@@ -402,6 +402,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
 icon = ExtResource("12_og1vs")
 
 [node name="NoteContents" type="Panel" parent="Panels"]
+visible = false
 anchors_preset = -1
 anchor_top = 0.736
 anchor_right = 1.0
