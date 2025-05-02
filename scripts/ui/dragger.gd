@@ -1,9 +1,9 @@
 class_name Dragger extends Control
 
-@export var text: String = "Звук"
-@export var setting: StringName = &"volume"
+@export var display_text: String = "Parameter"
+@export var setting: StringName = &"parameter"
 
-@onready var display_text: RichTextLabel = $DisplayText
+@onready var label: RichTextLabel = $Label
 @onready var slider: HSlider = $Slider
 
 func _ready() -> void:
@@ -14,4 +14,4 @@ func _ready() -> void:
 func _on_slider_dragged(value_changed: bool) -> void:
 	if value_changed:
 		Settings.set(setting, slider.value)
-		display_text.text = "%s: %d%%" % [text, slider.value]
+		label.text = "%s: %d%%" % [display_text, slider.value]

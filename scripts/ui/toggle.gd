@@ -1,8 +1,10 @@
 class_name Toggle extends CheckButton
 
-@export var setting: StringName = &"animations"
+@export var display_text: String = "Parameter"
+@export var setting: StringName = &"parameter"
 
 func _ready() -> void:
+	text = "%s:" % display_text
 	button_pressed = Settings.get(setting)
 	toggled.connect(_on_toggled)
 

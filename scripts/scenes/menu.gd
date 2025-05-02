@@ -12,8 +12,8 @@ var tween_background: Tween
 
 
 func _ready() -> void:
-	bg_animation.active = Settings.animations
-	title_animation.active = Settings.animations
+	bg_animation.active = Settings.animations_enabled
+	title_animation.active = Settings.animations_enabled
 	introduction()
 
 

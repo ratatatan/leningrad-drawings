@@ -1,7 +1,8 @@
 extends Node
 
 var menu_intro_enabled := true
-var animations := true
+var animations_enabled := true
+var subtitles_enabled := false
 
 var master_volume : float:
 	set(x):

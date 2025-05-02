@@ -67,6 +67,7 @@ anchor_left = 0.0539139
 anchor_top = 0.0961804
 anchor_right = 0.448445
 anchor_bottom = 0.23044
+display_text = "Громкость"
 setting = &"master_volume"
 
 [node name="SpeechVolume" parent="." instance=ExtResource("5_4ppmf")]
@@ -75,7 +76,7 @@ anchor_left = 0.0539139
 anchor_top = 0.230557
 anchor_right = 0.444539
 anchor_bottom = 0.369446
-text = "Озвучка"
+display_text = "Озвучка"
 setting = &"speech_volume"
 
 [node name="SFXVolume" parent="." instance=ExtResource("5_4ppmf")]
@@ -84,7 +85,7 @@ anchor_left = 0.0539139
 anchor_top = 0.369535
 anchor_right = 0.444539
 anchor_bottom = 0.508424
-text = "Звуки"
+display_text = "Звуки"
 setting = &"sfx_volume"
 
 [node name="MusicVolume" parent="." instance=ExtResource("5_4ppmf")]
@@ -93,7 +94,7 @@ anchor_left = 0.0539139
 anchor_top = 0.508514
 anchor_right = 0.444539
 anchor_bottom = 0.647402
-text = "Музыка"
+display_text = "Музыка"
 setting = &"music_volume"
 
 [node name="Animation" parent="." instance=ExtResource("6_gis3k")]
@@ -102,5 +103,17 @@ anchor_left = 0.556247
 anchor_top = 0.0846756
 anchor_right = 0.946872
 anchor_bottom = 0.161064
+display_text = "Анимации"
+setting = &"animations_enabled"
+
+[node name="Subtitles" parent="." instance=ExtResource("6_gis3k")]
+layout_mode = 1
+anchor_left = 0.556247
+anchor_top = 0.230557
+anchor_right = 0.946872
+anchor_bottom = 0.306946
+button_pressed = false
+display_text = "Субтитры"
+setting = &"subtitles_enabled"
 
 [connection signal="pressed" from="MainClose" to="." method="_on_close_pressed"]
