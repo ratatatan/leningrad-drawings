@@ -1,4 +1,4 @@
-extends CheckButton
+class_name Toggle extends CheckButton
 
 @export var setting: StringName = &"animations"
 

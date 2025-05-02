@@ -461,8 +461,13 @@ icon = ExtResource("12_og1vs")
 expand_icon = true
 
 [node name="SpeechPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Speech"
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
 
 [connection signal="pressed" from="Buttons/MainClose" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Panels/BookContents/Next" to="Panels/BookContents" method="_on_next_pressed"]

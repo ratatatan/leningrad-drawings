@@ -1,4 +1,4 @@
-extends Node
+class_name Dragger extends Control
 
 @export var text: String = "Звук"
 @export var setting: StringName = &"volume"

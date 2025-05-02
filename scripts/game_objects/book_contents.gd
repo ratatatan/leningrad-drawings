@@ -10,9 +10,9 @@ var pages_sounds : Array[AudioStreamWAV]
 @onready var desc := $Description
 @onready var title := $Title
 
-var current_page: int = 0:
+var current_page := 0:
 	set(x): current_page = clamp(x, 0, pages.size()-1)
-var last_page: int = 0
+var last_page := 0
 
 func _init() -> void:
 	for i in range(1, 21):
@@ -25,7 +25,11 @@ func open() -> void:
 
 func close() -> void:
 	visible = false
+	
+	sfx_player.stop()
 	speech_player.stop()
+	
+	speech_player.stream = null
 	sfx_player.stream = \
 		preload("res://assets/audio/other/book_sounds/close-book.wav")
 	sfx_player.play()
@@ -55,35 +59,42 @@ func init_page(page_index: int) -> void:
 	else:
 		speech_player.stream = null
 	
-	sfx_player.stream = \
-		load("res://assets/audio/other/book_sounds/pg%d.wav" % randi_range(0, 20))
+	sfx_player.stream = pages_sounds.pick_random()
 	sfx_player.pitch_scale = randf_range(0.8, 1.2)
 
 func open_on_page(page_index: int) -> void:
 	init_page(page_index)
-	sfx_player.stream = \
-		preload("res://assets/audio/other/book_sounds/book-open.wav")
-	sfx_player.play()
-	await sfx_player.finished
+	
+	if AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("SFX")) != 0.0:
+		sfx_player.stream = \
+			preload("res://assets/audio/other/book_sounds/book-open.wav")
+		sfx_player.play()
+		await sfx_player.finished
+	
 	speech_player.play()
 
-func change_page(page_index: int) -> void:
+func update_page() -> void:
+	print("Changing page from %s to %s" % [last_page, current_page])
 	if last_page == current_page: return
-	
-	init_page(page_index)
-	sfx_player.play()
-	await sfx_player.finished
-	speech_player.play()
-	
 	last_page = current_page
+	
+	init_page(current_page)
+	
+	if AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("SFX")) != 0.0:
+		sfx_player.stream = \
+			preload("res://assets/audio/other/book_sounds/book-open.wav")
+		sfx_player.play()
+		await sfx_player.finished
+	
+	speech_player.play()
 
 func _on_back_pressed() -> void:
 	current_page -= 1
-	change_page(current_page)
+	update_page()
 
 func _on_next_pressed() -> void:
 	current_page += 1
-	change_page(current_page)
+	update_page()
 
 func _on_close_pressed() -> void:
 	close()
