@@ -1,11 +1,119 @@
-[gd_resource type="Resource" script_class="SubtitledAudio" load_steps=3 format=3 uid="uid://b7udfayrevhbt"]
+[gd_resource type="Resource" script_class="SubtitledAudio" load_steps=22 format=3 uid="uid://b7udfayrevhbt"]
 
 [ext_resource type="Script" uid="uid://d4ns6jalujwmy" path="res://scripts/resources/subtitled_audio.gd" id="1_h0cl3"]
 [ext_resource type="AudioStream" uid="uid://dpujurriyt722" path="res://assets/audio/diary_entries/record_4_queue.wav" id="2_bwy1j"]
+[ext_resource type="Script" uid="uid://7s0p2xf8cv0r" path="res://scripts/resources/subtitle.gd" id="3_pks1t"]
+
+[sub_resource type="Resource" id="Resource_2omh5"]
+script = ExtResource("3_pks1t")
+text = "Сегодня был тяжелый день, он показался мне бесконечно долгим."
+duration = 3.96
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_ad7ux"]
+script = ExtResource("3_pks1t")
+text = "С утра я заняла очередь в наш магазин на улице Бродского. Надо было получить последние 100 грамм мяса по моей карточке."
+duration = 6.7
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_m4g4m"]
+script = ExtResource("3_pks1t")
+text = "В очереди раздавали номерки, мне достался уже очень дальний, за тысячу."
+duration = 4.89
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_jwqaj"]
+script = ExtResource("3_pks1t")
+text = "Я стала стоять, но скоро почувствовала, что совершенно закоченела."
+duration = 3.94
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_pmrw6"]
+script = ExtResource("3_pks1t")
+text = "Сегодня мороз какой-то особенно зловещий, обжигающий, на глазах у меня были непрерывные слезы,"
+duration = 5.9
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_jie7v"]
+script = ExtResource("3_pks1t")
+text = "руки никак не могли согреться даже в многослойных огромных варежках, которые я сейчас ношу. "
+duration = 4.94
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_w5tt6"]
+script = ExtResource("3_pks1t")
+text = "На углу стояла другая очередь — ждали свежий номер «Ленинградской правды»,"
+duration = 3.9
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_fkcva"]
+script = ExtResource("3_pks1t")
+text = "она теперь выходит на одной странице и бумага быстро желтеет."
+duration = 3.8
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_nr3eo"]
+script = ExtResource("3_pks1t")
+text = "На очередь за газетой у меня уже не хватало сил. Боялась к тому же пропустить мясную."
+duration = 5.3
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_4vwy7"]
+script = ExtResource("3_pks1t")
+text = "Но надо сказать, что люди в Ленинграде соблюдали очередь очень добросовестно,"
+duration = 3.77
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_kok3v"]
+script = ExtResource("3_pks1t")
+text = "и никогда не приходилось видеть, чтобы не пустили ребенка или опоздавшего."
+duration = 3.58
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_od5m8"]
+script = ExtResource("3_pks1t")
+text = "Достоять до конца у меня, наверное, не хватило бы сил, если бы случайно не подоспела мама."
+duration = 4.4
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_xhbiq"]
+script = ExtResource("3_pks1t")
+text = "Она взяла карточки, а я, не помню уже как, побежала домой."
+duration = 3.36
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_86767"]
+script = ExtResource("3_pks1t")
+text = "Потом пришла мама, согрелась, и из полученного мяса и остатков капустной хряпы мы сварили суп,"
+duration = 5.07
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_njjyx"]
+script = ExtResource("3_pks1t")
+text = "он показался почти «настоящим», ведь мы так давно не видели мяса."
+duration = 4.71
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_068eo"]
+script = ExtResource("3_pks1t")
+text = "Скоро, скоро мы будем свободны, не будет блокады."
+duration = 4.28
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_6q052"]
+script = ExtResource("3_pks1t")
+text = "Вчера утром, был слышен отдаленный, какой-то необычный гул канонады."
+duration = 4.09
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_foa2g"]
+script = ExtResource("3_pks1t")
+text = "Все говорят: «Началось!» Теперь все знают, что наступают наши, на всем Ленинградском фронте!"
+duration = 6.41
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
 
 [resource]
 script = ExtResource("1_h0cl3")
-lines = Array[String](["Line 1", "Lein 2", "Line 3"])
-delays = Array[float]([1.0, 1.0, 1.0])
+subtitles = Array[ExtResource("3_pks1t")]([SubResource("Resource_2omh5"), SubResource("Resource_ad7ux"), SubResource("Resource_m4g4m"), SubResource("Resource_jwqaj"), SubResource("Resource_pmrw6"), SubResource("Resource_jie7v"), SubResource("Resource_w5tt6"), SubResource("Resource_fkcva"), SubResource("Resource_nr3eo"), SubResource("Resource_4vwy7"), SubResource("Resource_kok3v"), SubResource("Resource_od5m8"), SubResource("Resource_xhbiq"), SubResource("Resource_86767"), SubResource("Resource_njjyx"), SubResource("Resource_068eo"), SubResource("Resource_6q052"), SubResource("Resource_foa2g")])
 stream = ExtResource("2_bwy1j")
 metadata/_custom_type_script = "uid://d4ns6jalujwmy"

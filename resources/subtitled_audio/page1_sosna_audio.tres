@@ -1,15 +1,113 @@
-[gd_resource type="Resource" script_class="SubtitledAudio" load_steps=3 format=3 uid="uid://d2c2jbhm80236"]
+[gd_resource type="Resource" script_class="SubtitledAudio" load_steps=21 format=3 uid="uid://d2c2jbhm80236"]
 
 [ext_resource type="Script" uid="uid://d4ns6jalujwmy" path="res://scripts/resources/subtitled_audio.gd" id="1_1da00"]
 [ext_resource type="AudioStream" uid="uid://cpcigl5jwdssj" path="res://assets/audio/diary_entries/record_1_foreword.wav" id="2_pducr"]
+[ext_resource type="Script" uid="uid://7s0p2xf8cv0r" path="res://scripts/resources/subtitle.gd" id="3_31l1u"]
+
+[sub_resource type="Resource" id="Resource_31l1u"]
+script = ExtResource("3_31l1u")
+text = "Каждый день я иду на работу через украшенный старинными фонарями мостик на канале Грибоедова."
+duration = 5.2
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_5fin6"]
+script = ExtResource("3_31l1u")
+text = "Город просыпается, начинает новый день труда."
+duration = 3.3
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_alpx8"]
+script = ExtResource("3_31l1u")
+text = "Воспоминания возвращают на 20 с лишним лет назад, и я вижу себя 13-летней девочкой,"
+duration = 4.76
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_sw2yj"]
+script = ExtResource("3_31l1u")
+text = "медленно, с усилием бредущей по заснеженной улице."
+duration = 3.01
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_vgjw2"]
+script = ExtResource("3_31l1u")
+text = "Мглистое, морозное утро - январь 1942 года."
+duration = 3.53
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_fowy8"]
+script = ExtResource("3_31l1u")
+text = "Долог, мучителен путь."
+duration = 1.95
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_yxn0o"]
+script = ExtResource("3_31l1u")
+text = "Надо пересечь набережную, взойти на несколько ступенек моста."
+duration = 3.93
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_c8k28"]
+script = ExtResource("3_31l1u")
+text = "А если вдруг послышится шум грузовика-газогенератора;"
+duration = 3.23
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_mfm56"]
+script = ExtResource("3_31l1u")
+text = "надо остановиться - ведь перебежать дорогу или просто ускорить шаг нехватит сил,"
+duration = 5.04
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_6prx4"]
+script = ExtResource("3_31l1u")
+text = "в ногах невероятная свинцовая тяжесть..."
+duration = 3.13
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_i5ug0"]
+script = ExtResource("3_31l1u")
+text = "...Передо мной - чуть пожелтевшие листки календаря 1942 года."
+duration = 3.59
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_eef1y"]
+script = ExtResource("3_31l1u")
+text = "Листы месяцев от июня до декабря не оторваны."
+duration = 3.41
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_pf7as"]
+script = ExtResource("3_31l1u")
+text = "Время словно остановилось."
+duration = 1.88
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_gfgsp"]
+script = ExtResource("3_31l1u")
+text = "Но привычка оказалась сильнее, и я продолжила тогда вести свой дневниик,"
+duration = 4.31
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_2v0vv"]
+script = ExtResource("3_31l1u")
+text = "начатый еще в первые школьные годы."
+duration = 2.17
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_4q00l"]
+script = ExtResource("3_31l1u")
+text = "Я достаю из глубины стола эти старые тетради, и время возвращается ко мне со страниц,"
+duration = 4.83
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_uixnr"]
+script = ExtResource("3_31l1u")
+text = "исписанных крупным детским почерком."
+duration = 3.0
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
 
 [resource]
 script = ExtResource("1_1da00")
-lines = Dictionary[String, float]({
-"": 0.0,
-"Line 1": 1.0,
-"Line 2": 1.0,
-"Line 3": 1.0
-})
+subtitles = Array[ExtResource("3_31l1u")]([SubResource("Resource_31l1u"), SubResource("Resource_5fin6"), SubResource("Resource_alpx8"), SubResource("Resource_sw2yj"), SubResource("Resource_vgjw2"), SubResource("Resource_fowy8"), SubResource("Resource_yxn0o"), SubResource("Resource_c8k28"), SubResource("Resource_mfm56"), SubResource("Resource_6prx4"), SubResource("Resource_i5ug0"), SubResource("Resource_eef1y"), SubResource("Resource_pf7as"), SubResource("Resource_gfgsp"), SubResource("Resource_2v0vv"), SubResource("Resource_4q00l"), SubResource("Resource_uixnr")])
 stream = ExtResource("2_pducr")
 metadata/_custom_type_script = "uid://d4ns6jalujwmy"

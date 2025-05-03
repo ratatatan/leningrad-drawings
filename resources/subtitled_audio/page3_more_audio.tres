@@ -1,11 +1,125 @@
-[gd_resource type="Resource" script_class="SubtitledAudio" load_steps=3 format=3 uid="uid://d4f80ugpi0jfj"]
+[gd_resource type="Resource" script_class="SubtitledAudio" load_steps=23 format=3 uid="uid://d4f80ugpi0jfj"]
 
 [ext_resource type="Script" uid="uid://d4ns6jalujwmy" path="res://scripts/resources/subtitled_audio.gd" id="1_xr3q6"]
 [ext_resource type="AudioStream" uid="uid://cg4caviify2cx" path="res://assets/audio/diary_entries/record_3_school.wav" id="2_r5te3"]
+[ext_resource type="Script" uid="uid://7s0p2xf8cv0r" path="res://scripts/resources/subtitle.gd" id="3_raru5"]
+
+[sub_resource type="Resource" id="Resource_11qw8"]
+script = ExtResource("3_raru5")
+text = "Вчера один мужчина в убежище сказал, что продуктов в городе хватит до 1 декабря."
+duration = 4.69
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_aqcso"]
+script = ExtResource("3_raru5")
+text = "А что же будет с нами дальше?!"
+duration = 2.11
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_g3y6r"]
+script = ExtResource("3_raru5")
+text = "Мы все время носим мешочек с черными сухарями на случай тревоги, ведь белого хлеба уже давно не выдают."
+duration = 5.91
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_nosjr"]
+script = ExtResource("3_raru5")
+text = "Мама просит есть их понемногу, а есть очень хочется."
+duration = 3.81
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_7yod4"]
+script = ExtResource("3_raru5")
+text = "Вчера мама послала меня к соседу за газетой. Я постучала."
+duration = 4.06
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_0jfux"]
+script = ExtResource("3_raru5")
+text = "Он долго не открывал, возился за дверью, чем-то гремел и шуршал."
+duration = 4.11
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_4swfb"]
+script = ExtResource("3_raru5")
+text = "Когда дверь открылась, я успела заметить спрятанные наспех банки консервов и кульки с крупой."
+duration = 6.47
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_2sqi8"]
+script = ExtResource("3_raru5")
+text = "Он, конечно, хотел спрятать их подальше, чтобы никто случайно не увидел."
+duration = 3.89
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_wxgp1"]
+script = ExtResource("3_raru5")
+text = "Теперь многие скрывают запасы, если что-то сохранилось, и ни за что не едят при других."
+duration = 6.12
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_6ypo5"]
+script = ExtResource("3_raru5")
+text = "Школу, наверное, скоро закроют. В класс приходит меньше половины учеников."
+duration = 4.63
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_gwjmj"]
+script = ExtResource("3_raru5")
+text = "Мы не снимаем пальто. Учителя отмечают в журналах посещаемость,"
+duration = 4.02
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_b85mx"]
+script = ExtResource("3_raru5")
+text = "но не взыскивают с нас за пропуски."
+duration = 2.2
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_jgwk5"]
+script = ExtResource("3_raru5")
+text = "Между уроками делается один \"свободный час\", когда может заняться своим делом, но не выходя из класса."
+duration = 6.48
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_n8fce"]
+script = ExtResource("3_raru5")
+text = "Девочки вышивают кисеты бойцам, многие очень хорошо подбирают цвета ниток. Я немного рисую."
+duration = 6.4
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_m2duw"]
+script = ExtResource("3_raru5")
+text = "Но так трудно, ведь не рисовала всю зиму."
+duration = 2.33
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_jb8ey"]
+script = ExtResource("3_raru5")
+text = "Сегодня сделала карандашом 2 маленьких вида."
+duration = 2.8
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_cyeqx"]
+script = ExtResource("3_raru5")
+text = "Дома как-нибудь попробую снова порисовать красками."
+duration = 3.26
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_nnwb4"]
+script = ExtResource("3_raru5")
+text = "Но все-таки много думаем о еде, и, когда дежурный снизу крикнул \"6-а, в столовую!\" - все бросились,"
+duration = 6.71
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_6o108"]
+script = ExtResource("3_raru5")
+text = "схватив сумки, по лестнице."
+duration = 2.0
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
 
 [resource]
 script = ExtResource("1_xr3q6")
-lines = Array[String](["Line 1", "Line 2", "Line 3"])
-delays = Array[float]([1.0, 1.0, 1.0])
+subtitles = Array[ExtResource("3_raru5")]([SubResource("Resource_11qw8"), SubResource("Resource_aqcso"), SubResource("Resource_g3y6r"), SubResource("Resource_nosjr"), SubResource("Resource_7yod4"), SubResource("Resource_0jfux"), SubResource("Resource_4swfb"), SubResource("Resource_2sqi8"), SubResource("Resource_wxgp1"), SubResource("Resource_6ypo5"), SubResource("Resource_gwjmj"), SubResource("Resource_b85mx"), SubResource("Resource_jgwk5"), SubResource("Resource_n8fce"), SubResource("Resource_m2duw"), SubResource("Resource_jb8ey"), SubResource("Resource_cyeqx"), SubResource("Resource_nnwb4"), SubResource("Resource_6o108")])
 stream = ExtResource("2_r5te3")
 metadata/_custom_type_script = "uid://d4ns6jalujwmy"

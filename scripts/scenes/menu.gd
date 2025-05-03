@@ -53,5 +53,6 @@ func _on_settings_pressed() -> void:
 	change_scene(Constants.get_settings_scene())
 
 
-#func _on_exit_pressed() -> void:
-	#get_tree().quit()
+func _input(event: InputEvent) -> void:
+	if event.is_action("esc"):
+		get_tree().quit()

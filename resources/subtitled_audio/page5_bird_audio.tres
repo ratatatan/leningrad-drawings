@@ -1,11 +1,77 @@
-[gd_resource type="Resource" script_class="SubtitledAudio" load_steps=3 format=3 uid="uid://dqlssvr21ag2n"]
+[gd_resource type="Resource" script_class="SubtitledAudio" load_steps=15 format=3 uid="uid://dqlssvr21ag2n"]
 
 [ext_resource type="Script" uid="uid://d4ns6jalujwmy" path="res://scripts/resources/subtitled_audio.gd" id="1_wsarg"]
 [ext_resource type="AudioStream" uid="uid://clq68m7gbkq78" path="res://assets/audio/diary_entries/record_5_release.wav" id="2_ln84v"]
+[ext_resource type="Script" uid="uid://7s0p2xf8cv0r" path="res://scripts/resources/subtitle.gd" id="3_7wyyx"]
+
+[sub_resource type="Resource" id="Resource_o4bpq"]
+script = ExtResource("3_7wyyx")
+text = ""
+duration = 0.0
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_73wlg"]
+script = ExtResource("3_7wyyx")
+text = "Я еще никак не могу осознать, что блокады нет, что нет обстрелов, затемнения, бомбежек, что теперь всегда будет тишина."
+duration = 8.06
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_vyhl3"]
+script = ExtResource("3_7wyyx")
+text = "Вчера были на Марсовом поле, смотрели первый ленинградский салют."
+duration = 4.06
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_w4ri1"]
+script = ExtResource("3_7wyyx")
+text = "На морозе было даже жарко, все расстегнулись, никто не боялся простудиться, радость, конечно, описать невозможно."
+duration = 5.97
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_3bupf"]
+script = ExtResource("3_7wyyx")
+text = "Долго не могли заснуть. Главное, не верится, что теперь тихо."
+duration = 4.42
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_k1x2p"]
+script = ExtResource("3_7wyyx")
+text = "Ведь так недавно еще мы прижимались к стенам домов, не могли поднять головы."
+duration = 4.32
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_7tg0b"]
+script = ExtResource("3_7wyyx")
+text = "Утром в школе на первом уроке был общий митинг."
+duration = 2.94
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_dnt8x"]
+script = ExtResource("3_7wyyx")
+text = "Выступали почти все учителя, многие учащиеся. Говорила от нашего класса и я."
+duration = 4.79
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_v3syw"]
+script = ExtResource("3_7wyyx")
+text = "Нас в этот день, конечно, не спрашивали ни по одному предмету."
+duration = 2.79
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_v44u6"]
+script = ExtResource("3_7wyyx")
+text = "Наша жизнь теперь должна перемениться, ленинградцы начнут жить совсем по-новому."
+duration = 5.18
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_1xsc0"]
+script = ExtResource("3_7wyyx")
+text = "Не знаю, как это будет, но будет совсем иначе!"
+duration = 4.91
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
 
 [resource]
 script = ExtResource("1_wsarg")
-lines = Array[String](["1", "2", "3"])
-delays = Array[float]([1.0, 1.0, 1.0])
+subtitles = Array[ExtResource("3_7wyyx")]([SubResource("Resource_o4bpq"), SubResource("Resource_73wlg"), SubResource("Resource_vyhl3"), SubResource("Resource_w4ri1"), SubResource("Resource_3bupf"), SubResource("Resource_k1x2p"), SubResource("Resource_7tg0b"), SubResource("Resource_dnt8x"), SubResource("Resource_v3syw"), SubResource("Resource_v44u6"), SubResource("Resource_1xsc0")])
 stream = ExtResource("2_ln84v")
 metadata/_custom_type_script = "uid://d4ns6jalujwmy"

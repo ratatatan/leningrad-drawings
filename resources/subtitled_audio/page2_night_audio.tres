@@ -1,11 +1,53 @@
-[gd_resource type="Resource" script_class="SubtitledAudio" load_steps=3 format=3 uid="uid://b681nnepy1bdb"]
+[gd_resource type="Resource" script_class="SubtitledAudio" load_steps=11 format=3 uid="uid://b681nnepy1bdb"]
 
 [ext_resource type="Script" uid="uid://d4ns6jalujwmy" path="res://scripts/resources/subtitled_audio.gd" id="1_7l71y"]
 [ext_resource type="AudioStream" uid="uid://cx3ifskw06uoy" path="res://assets/audio/diary_entries/record_2_attack.wav" id="2_3lr57"]
+[ext_resource type="Script" uid="uid://7s0p2xf8cv0r" path="res://scripts/resources/subtitle.gd" id="3_53qgr"]
+
+[sub_resource type="Resource" id="Resource_qaaxo"]
+script = ExtResource("3_53qgr")
+text = "Сегодня очень ясное, тихое и росистое утро."
+duration = 2.54
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_w42ol"]
+script = ExtResource("3_53qgr")
+text = "Приедут гости, и мы поведем их в дальний лес, где еще не были."
+duration = 3.23
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_1remw"]
+script = ExtResource("3_53qgr")
+text = "Хозяин говорит, что осенью там видимо-невидимо грибов."
+duration = 3.15
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_fhhed"]
+script = ExtResource("3_53qgr")
+text = "Если бы и осенью были каникулы!"
+duration = 2.07
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_trdvb"]
+script = ExtResource("3_53qgr")
+text = "Завтра я напишу о нашей прогулке, спешу, скоро надо идти на вокзал встречать..."
+duration = 4.53
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_n8mm5"]
+script = ExtResource("3_53qgr")
+text = "Встречи не было, никто не приехал, а на станции по радио передали страшную весть"
+duration = 5.46
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
+
+[sub_resource type="Resource" id="Resource_d4uln"]
+script = ExtResource("3_53qgr")
+text = "— на нас напала Германия..."
+duration = 2.65
+metadata/_custom_type_script = "uid://7s0p2xf8cv0r"
 
 [resource]
 script = ExtResource("1_7l71y")
-lines = Array[String](["Line 1", "Line 2", "Line 3"])
-delays = Array[float]([1.0, 1.0, 1.0])
+subtitles = Array[ExtResource("3_53qgr")]([SubResource("Resource_qaaxo"), SubResource("Resource_w42ol"), SubResource("Resource_1remw"), SubResource("Resource_fhhed"), SubResource("Resource_trdvb"), SubResource("Resource_n8mm5"), SubResource("Resource_d4uln")])
 stream = ExtResource("2_3lr57")
 metadata/_custom_type_script = "uid://d4ns6jalujwmy"

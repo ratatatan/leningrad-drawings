@@ -3,8 +3,9 @@ class_name Main extends Control
 @onready var speech_player: AudioStreamPlayer = %SpeechPlayer
 @onready var sfx_player: AudioStreamPlayer = %SFXPlayer
 @onready var music_player: AudioStreamPlayer = %MusicPlayer
-@onready var subtitles: RichTextLabel = %Subtitles
+@onready var subtitles_node: RichTextLabel = %Subtitles
 
+#var sub_instance : RichTextLabel
 
 func play_sfx(sound: AudioStreamWAV) -> void:
 	if Settings.sfx_volume == 0.0:
@@ -21,16 +22,10 @@ func play_speech(speech: SubtitledAudio) -> void:
 	
 	speech_player.stop()
 	speech_player.stream = speech.stream
-	var last_stream = speech.stream.get_rid()
 	speech_player.play()
 	
 	if Settings.subtitles_enabled:
-		subtitles.visible = true
-		for line in speech.lines:
-			subtitles.text = line
-			await get_tree().create_timer(speech.lines[line]).timeout
-			if last_stream != speech_player.stream.get_rid(): break
-		subtitles.visible = false
+		create_subs(speech.subtitles)
 		
 func stop_sfx() -> void:
 	sfx_player.stream = null
@@ -38,9 +33,26 @@ func stop_sfx() -> void:
 
 func stop_speech() -> void:
 	if Settings.subtitles_enabled:
-		subtitles.visible = false
-	#speech_player.stream = null
+		clear_subs()
 	speech_player.stop()
+
+func create_subs(subtitles: Array[Subtitle]) -> void:
+	clear_subs()
+	
+	var sub_instance := subtitles_node.duplicate()
+	subtitles_node.add_sibling(sub_instance)
+	sub_instance.add_to_group(&"subtitles")
+	sub_instance.visible = true
+	
+	for sub in subtitles:
+		if not sub_instance: return
+		sub_instance.text = sub.text
+		await get_tree().create_timer(sub.duration).timeout
+	sub_instance.queue_free()
+
+func clear_subs() -> void:
+	for sub in get_tree().get_nodes_in_group(&"subtitles"):
+		sub.queue_free()
 
 func _on_close_pressed() -> void:
 	get_tree().change_scene_to_packed(Constants.get_menu_scene())

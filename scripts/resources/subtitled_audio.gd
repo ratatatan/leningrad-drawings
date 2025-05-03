@@ -1,4 +1,4 @@
 class_name SubtitledAudio extends Resource
 
-@export var lines : Dictionary[String, float] 
+@export var subtitles : Array[Subtitle]
 @export var stream: AudioStreamWAV
