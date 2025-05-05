@@ -44,13 +44,13 @@ func change_scene(new_scene: PackedScene) -> void:
 	get_tree().change_scene_to_packed(new_scene)
 
 func _on_launch_pressed() -> void:
-	change_scene(Constants.get_main_scene())
+	change_scene(Constants.main_scene)
 
 func _on_info_pressed() -> void:
-	change_scene(Constants.get_info_scene())
+	change_scene(Constants.info_scene)
 
 func _on_settings_pressed() -> void:
-	change_scene(Constants.get_settings_scene())
+	change_scene(Constants.settings_scene)
 
 
 func _input(event: InputEvent) -> void:

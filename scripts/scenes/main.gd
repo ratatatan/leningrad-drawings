@@ -54,4 +54,4 @@ func clear_subs() -> void:
 		sub.queue_free()
 
 func _on_close_pressed() -> void:
-	get_tree().change_scene_to_packed(Constants.get_menu_scene())
+	get_tree().change_scene_to_packed(Constants.menu_scene)

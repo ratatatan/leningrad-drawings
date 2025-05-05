@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://b2yx02mwauxqv"]
+[gd_scene load_steps=34 format=3 uid="uid://b2yx02mwauxqv"]
 
 [ext_resource type="Script" uid="uid://bp11yuqa2xrqy" path="res://scripts/scenes/main.gd" id="1_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://c0aivvrlyeun4" path="res://assets/textures/table/desk.jpg" id="2_tel4y"]
@@ -26,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://dvuijhdm8hesq" path="res://assets/textures/ui/pages2.png" id="22_qkpxi"]
 [ext_resource type="Texture2D" uid="uid://b5w2p65gdelyx" path="res://assets/textures/table/palette.png" id="26_yq6so"]
 [ext_resource type="Texture2D" uid="uid://db5ra4n6pvwlo" path="res://assets/textures/table/brushes.png" id="27_fv21b"]
-[ext_resource type="AudioStream" uid="uid://dwoxth6nj3e3c" path="res://assets/audio/other/back-music.wav" id="27_vxglm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jscy8"]
 bg_color = Color(0.380325, 0.627651, 0.810656, 0.607843)
@@ -502,11 +501,6 @@ bus = &"Speech"
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 bus = &"SFX"
-
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-unique_name_in_owner = true
-stream = ExtResource("27_vxglm")
-bus = &"Music"
 
 [connection signal="pressed" from="Buttons/MainClose" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Panels/BookContents/Next" to="Panels/BookContents" method="_on_next_pressed"]
