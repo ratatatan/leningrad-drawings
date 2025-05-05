@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b2yx02mwauxqv"]
+[gd_scene load_steps=35 format=3 uid="uid://b2yx02mwauxqv"]
 
 [ext_resource type="Script" uid="uid://bp11yuqa2xrqy" path="res://scripts/scenes/main.gd" id="1_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://c0aivvrlyeun4" path="res://assets/textures/table/desk.jpg" id="2_tel4y"]
@@ -23,13 +23,10 @@
 [ext_resource type="Resource" uid="uid://cjgcfbsl8t0qc" path="res://resources/book_pages/page4_nature.tres" id="13_yc10j"]
 [ext_resource type="Resource" uid="uid://bpweeicgbpj3n" path="res://resources/book_pages/page5_bird.tres" id="14_jscy8"]
 [ext_resource type="Resource" uid="uid://cmm3v138th73t" path="res://resources/book_pages/page2_night.tres" id="15_muem4"]
-[ext_resource type="Resource" uid="uid://bb17n5fahqihp" path="res://resources/book_pages/album_page1.tres" id="19_yc10j"]
-[ext_resource type="Resource" uid="uid://bfqyl1w1yvx8q" path="res://resources/book_pages/album_page2.tres" id="20_y6deb"]
-[ext_resource type="Resource" uid="uid://ds4yywcmfg511" path="res://resources/book_pages/album_page3.tres" id="21_og1vs"]
-[ext_resource type="Resource" uid="uid://b7txud6l1ffon" path="res://resources/book_pages/album_page4.tres" id="22_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://dvuijhdm8hesq" path="res://assets/textures/ui/pages2.png" id="22_qkpxi"]
 [ext_resource type="Texture2D" uid="uid://b5w2p65gdelyx" path="res://assets/textures/table/palette.png" id="26_yq6so"]
 [ext_resource type="Texture2D" uid="uid://db5ra4n6pvwlo" path="res://assets/textures/table/brushes.png" id="27_fv21b"]
+[ext_resource type="AudioStream" uid="uid://dwoxth6nj3e3c" path="res://assets/audio/other/back-music.wav" id="27_vxglm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jscy8"]
 bg_color = Color(0.380325, 0.627651, 0.810656, 0.607843)
@@ -208,6 +205,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jbj1t")
 script = ExtResource("7_gqmmt")
 pages = Array[ExtResource("8_yc10j")]([ExtResource("9_jscy8"), ExtResource("15_muem4"), ExtResource("12_gqmmt"), ExtResource("13_yc10j"), ExtResource("14_jscy8")])
+isBook = true
 
 [node name="Pages" type="TextureRect" parent="Panels/BookContents"]
 layout_mode = 1
@@ -316,7 +314,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jbj1t")
 script = ExtResource("7_gqmmt")
-pages = Array[ExtResource("8_yc10j")]([ExtResource("19_yc10j"), ExtResource("20_y6deb"), ExtResource("21_og1vs"), ExtResource("22_2wyq8")])
 
 [node name="Pages" type="TextureRect" parent="Panels/AlbumContents"]
 layout_mode = 1
@@ -508,6 +505,7 @@ bus = &"SFX"
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
+stream = ExtResource("27_vxglm")
 bus = &"Music"
 
 [connection signal="pressed" from="Buttons/MainClose" to="." method="_on_close_pressed"]

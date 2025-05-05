@@ -22,14 +22,17 @@ var sfx_volume : float:
 		AudioServer.set_bus_volume_linear(bus, x / 100.0)
 		sfx_volume = x
 		
+signal settings_changed(setting: StringName, value: Variant)
+
 var music_volume : float:
 	set(x):
 		var bus := AudioServer.get_bus_index("Music")
-		AudioServer.set_bus_volume_linear(bus, x / 100.0)
+		AudioServer.set_bus_volume_db(bus, linear_to_db(x / 100.0))
 		music_volume = x
+		settings_changed.emit(&"music_volume", x)
 
 func _init() -> void:
-	master_volume = 25.0
-	speech_volume = 25.0
-	sfx_volume = 25.0
-	music_volume = 25.0
+	master_volume = 50.0
+	speech_volume = 80.0
+	sfx_volume = 60.0
+	music_volume = 20.0

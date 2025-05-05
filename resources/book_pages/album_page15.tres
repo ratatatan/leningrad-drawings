@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Page" load_steps=3 format=3 uid="uid://bed47ugo8chne"]
+
+[ext_resource type="Texture2D" uid="uid://bcftfqidfsu51" path="res://assets/textures/paintings/ТаировВалерийЗима8лет.png" id="1_aws7b"]
+[ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/resources/page.gd" id="2_4708r"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_4708r")
+image = ExtResource("1_aws7b")
+text = "Таиров В., 8 лет"
+title = "[center]Зима[/center]"
+metadata/_custom_type_script = "uid://dybs5mlhnc8ov"

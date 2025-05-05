@@ -1,6 +1,7 @@
 extends ReadableContents
 
 @export var pages: Array[Page]
+@export var isBook: bool
 
 var pages_sounds : Array[AudioStreamWAV]
 
@@ -17,6 +18,11 @@ func _init() -> void:
 	for i in range(1, 21):
 		pages_sounds.append(
 			load("res://assets/audio/other/book_sounds/pg%d.wav" % i))
+			
+	if !isBook:
+		for i in range(1, 15 + 1):
+			pages.append(
+				load("res://resources/book_pages/album_page%d.tres" % i))
 
 func open() -> void:
 	visible = true

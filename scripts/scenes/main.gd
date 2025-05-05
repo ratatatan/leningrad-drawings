@@ -2,7 +2,6 @@ class_name Main extends Control
 
 @onready var speech_player: AudioStreamPlayer = %SpeechPlayer
 @onready var sfx_player: AudioStreamPlayer = %SFXPlayer
-@onready var music_player: AudioStreamPlayer = %MusicPlayer
 @onready var subtitles_node: RichTextLabel = %Subtitles
 
 #var sub_instance : RichTextLabel
