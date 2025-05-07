@@ -67,16 +67,16 @@ metadata/_edit_use_anchors_ = true
 [node name="Description" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0261794
+anchor_left = 0.0539139
 anchor_top = 0.0961804
-anchor_right = 0.550026
+anchor_right = 0.516589
 anchor_bottom = 0.927289
 offset_bottom = 0.00012207
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_1sggn")
 theme_override_fonts/bold_font = ExtResource("2_2iy26")
-theme_override_font_sizes/normal_font_size = 100
-theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/normal_font_size = 85
+theme_override_font_sizes/bold_font_size = 85
 bbcode_enabled = true
 text = "	Великая Отечественная война и блокада Ленинграда стали одним из самых трагических периодов в истории нашей страны. В те тяжелые годы дневники стали не только способом запечатлеть события, но и формой осмысления пережитых испытаний. Особенно трогательно и искренне свои эмоции выражали дети — через записи и рисунки, которые сегодня служат уникальными свидетельствами эпохи.
 
@@ -84,7 +84,7 @@ text = "	Великая Отечественная война и блокада 
 
 На столе вы можете увидеть:
 
-	[b]Дневник Жени[/b] — страницы, наполненные детскими переживаниями, рисунками и их описаниями;
+	[b]Дневник Жени[/b] — при перелистывании голос Жени читает отрывки из дневника, озвучивая ее мысли, которые возникали во время написания рисунка;
 
     [b]Альбом[/b] с рисунками других детей, переживших блокаду;
 
@@ -96,9 +96,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Precredits" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.580352
+anchor_left = 0.547952
 anchor_top = 0.0124252
-anchor_right = 0.979523
+anchor_right = 0.947123
 anchor_bottom = 0.146341
 theme_override_colors/default_color = Color(0.756863, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_2iy26")
@@ -110,10 +110,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Credits" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.580352
-anchor_top = 0.146341
-anchor_right = 0.979523
-anchor_bottom = 0.590888
+anchor_left = 0.547952
+anchor_top = 0.125173
+anchor_right = 0.947123
+anchor_bottom = 0.56972
 theme_override_colors/default_color = Color(0.756863, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_1sggn")
 theme_override_fonts/bold_font = ExtResource("2_2iy26")
@@ -134,10 +134,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Credits2" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.580352
-anchor_top = 0.597331
-anchor_right = 0.979523
-anchor_bottom = 0.927289
+anchor_left = 0.547952
+anchor_top = 0.569719
+anchor_right = 0.947123
+anchor_bottom = 0.899677
 theme_override_colors/default_color = Color(0.756863, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_1sggn")
 theme_override_fonts/bold_font = ExtResource("2_2iy26")
