@@ -4,24 +4,18 @@ class_name Main extends Control
 @onready var sfx_player: AudioStreamPlayer = %SFXPlayer
 @onready var subtitles_node: RichTextLabel = %Subtitles
 
-#var sub_instance : RichTextLabel
-
 func play_sfx(sound: AudioStreamWAV) -> void:
-	if Settings.sfx_volume == 0.0:
-		return
-		
-	sfx_player.stop()
-	sfx_player.stream = sound
-	sfx_player.play()
-	await sfx_player.finished
+	if Settings.sfx_volume * Settings.master_volume != 0.0:
+		sfx_player.stop()
+		sfx_player.stream = sound
+		sfx_player.play()
+		await sfx_player.finished
 
 func play_speech(speech: SubtitledAudio) -> void:
-	if Settings.speech_volume == 0.0:
-		return
-	
-	speech_player.stop()
-	speech_player.stream = speech.stream
-	speech_player.play()
+	if Settings.speech_volume * Settings.master_volume != 0.0:
+		speech_player.stop()
+		speech_player.stream = speech.stream
+		speech_player.play()
 	
 	if Settings.subtitles_enabled:
 		create_subs(speech.subtitles)

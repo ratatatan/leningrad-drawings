@@ -1,28 +1,30 @@
 extends ReadableContents
 
-@export var pages: Array[Page]
-@export var isBook: bool
+enum BookType {
+	ALBUM,
+	DIARY
+}
 
-var pages_sounds : Array[AudioStreamWAV]
-
-@onready var main: Main = $"../.."
-@onready var image := $Image
-@onready var desc := $Description
-@onready var title := $Title
+@export var book_type: BookType
 
 var current_page := 0:
 	set(x): current_page = clamp(x, 0, pages.size()-1)
 var last_page := 0
 
-func _init() -> void:
-	for i in range(1, 21):
-		pages_sounds.append(
-			load("res://assets/audio/other/book_sounds/pg%d.wav" % i))
-			
-	if !isBook:
-		for i in range(1, 15 + 1):
-			pages.append(
-				load("res://resources/book_pages/album_page%d.tres" % i))
+var tween: Tween
+
+@onready var pages : Array[Page] = \
+	Constants.album_pages if book_type == BookType.ALBUM else \
+	Constants.diary_pages if book_type == BookType.DIARY else \
+	null
+@onready var main: Main = $"../.."
+@onready var image := $Image
+@onready var desc := $Description
+@onready var title := $Title
+
+func _ready() -> void:
+	if Settings.animations_enabled:
+		fade_out(0)
 
 func open() -> void:
 	visible = true
@@ -30,16 +32,30 @@ func open() -> void:
 
 func close() -> void:
 	visible = false
-	
 	# Stop speech if its already playing
 	main.stop_speech()
 	main.stop_sfx()
-	await main.play_sfx(preload("res://assets/audio/other/book_sounds/close-book.wav"))
+	await main.play_sfx(Constants.book_sounds["book_close"])
 	# Prevent speech from playing
 	main.stop_speech()
+	fade_out(0)
+
+func fade_out(delta: float = 0.5) -> void:
+	tween = create_tween().set_ease(Tween.EASE_OUT) \
+	.set_trans(Tween.TRANS_LINEAR)
+	tween.tween_property(image, "modulate", Color.TRANSPARENT, delta)
+	tween.parallel().tween_property(title, "modulate", Color.TRANSPARENT, delta)
+	tween.parallel().tween_property(desc, "modulate", Color.TRANSPARENT, delta)
+
+func fade_in(delta: float = 0.5) -> void:
+	tween = create_tween().set_ease(Tween.EASE_OUT) \
+	.set_trans(Tween.TRANS_LINEAR)
+	tween.tween_property(image, "modulate", Color.WHITE, delta)
+	tween.parallel().tween_property(title, "modulate", Color.WHITE, delta)
+	tween.parallel().tween_property(desc, "modulate", Color.WHITE, delta)
 
 func init_page(page_index: int) -> void:
-	var new_page := pages[page_index]
+	var new_page : Page = pages[page_index]
 	main.stop_speech()
 	
 	if new_page.image:
@@ -60,7 +76,10 @@ func init_page(page_index: int) -> void:
 func open_on_page(page_index: int) -> void:
 	init_page(page_index)
 	
-	await main.play_sfx(preload("res://assets/audio/other/book_sounds/book-open.wav"))
+	if Settings.animations_enabled:
+		fade_in()
+	
+	await main.play_sfx(Constants.book_sounds["book_open"])
 	if pages[page_index].audio:
 		main.play_speech(pages[page_index].audio)
 
@@ -69,9 +88,16 @@ func update_page() -> void:
 	if last_page == current_page: return
 	last_page = current_page
 	
+	if Settings.animations_enabled:
+		fade_out()
+		await tween.finished
+		
 	init_page(current_page)
 	
-	await main.play_sfx(pages_sounds.pick_random())
+	if Settings.animations_enabled:
+		fade_in()
+	
+	await main.play_sfx(Constants.book_sounds["pages"].pick_random())
 	if pages[current_page].audio:
 		main.play_speech(pages[current_page].audio)
 

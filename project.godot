@@ -14,7 +14,7 @@ config/name="Leningrad Drawings"
 run/main_scene="uid://cfwedf0bfurdu"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 run/max_fps=60
-config/icon="res://icon.svg"
+config/icon="uid://bml1wi0kldh3p"
 
 [autoload]
 
@@ -30,6 +30,10 @@ window/size/resizable=false
 window/size/window_width_override=1440
 window/size/window_height_override=810
 window/stretch/mode="viewport"
+
+[editor]
+
+movie_writer/movie_file="C:/Users/User/Projects/leningrad-drawings/.export/video/vid.avi"
 
 [input]
 

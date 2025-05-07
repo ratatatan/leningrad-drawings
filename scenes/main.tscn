@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b2yx02mwauxqv"]
+[gd_scene load_steps=28 format=3 uid="uid://b2yx02mwauxqv"]
 
 [ext_resource type="Script" uid="uid://bp11yuqa2xrqy" path="res://scripts/scenes/main.gd" id="1_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://c0aivvrlyeun4" path="res://assets/textures/table/desk.jpg" id="2_tel4y"]
@@ -9,20 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://dudsq0yluxfpm" path="res://assets/textures/table/book_shadow.png" id="5_yq6so"]
 [ext_resource type="Script" uid="uid://djrrtio3es14q" path="res://scripts/game_objects/book_contents.gd" id="7_gqmmt"]
 [ext_resource type="Texture2D" uid="uid://iiqntc287ihq" path="res://assets/textures/table/album_glow.png" id="8_tel4y"]
-[ext_resource type="Script" uid="uid://dybs5mlhnc8ov" path="res://scripts/resources/page.gd" id="8_yc10j"]
 [ext_resource type="Texture2D" uid="uid://ddpuj5cpiyntg" path="res://assets/textures/table/george-lenta_glow.png" id="9_fv21b"]
-[ext_resource type="Resource" uid="uid://bwxccvwc0w1uw" path="res://resources/book_pages/page1_sosna.tres" id="9_jscy8"]
 [ext_resource type="Texture2D" uid="uid://dm5qcm5oolv82" path="res://assets/textures/table/album_shadow.png" id="9_qkpxi"]
 [ext_resource type="Texture2D" uid="uid://cijfm6likxvj4" path="res://icon.svg" id="10_jkv2x"]
 [ext_resource type="Theme" uid="uid://dkx7xsfaa3kbj" path="res://resources/themes/main/text_theme.tres" id="10_pm3ni"]
 [ext_resource type="Texture2D" uid="uid://cys8lsrnf6y6v" path="res://assets/textures/table/george-lenta_shadow.png" id="10_tel4y"]
 [ext_resource type="Texture2D" uid="uid://dahmcg6c4vu1t" path="res://assets/textures/ui/arrow.png" id="11_y6deb"]
-[ext_resource type="Resource" uid="uid://cmydxuk8856va" path="res://resources/book_pages/page3_more.tres" id="12_gqmmt"]
 [ext_resource type="Texture2D" uid="uid://chry2egjw4uim" path="res://assets/textures/ui/close.png" id="12_og1vs"]
 [ext_resource type="Script" uid="uid://cga6l2fob5ljf" path="res://scripts/game_objects/note_contents.gd" id="13_2wyq8"]
-[ext_resource type="Resource" uid="uid://cjgcfbsl8t0qc" path="res://resources/book_pages/page4_nature.tres" id="13_yc10j"]
-[ext_resource type="Resource" uid="uid://bpweeicgbpj3n" path="res://resources/book_pages/page5_bird.tres" id="14_jscy8"]
-[ext_resource type="Resource" uid="uid://cmm3v138th73t" path="res://resources/book_pages/page2_night.tres" id="15_muem4"]
 [ext_resource type="Texture2D" uid="uid://dvuijhdm8hesq" path="res://assets/textures/ui/pages2.png" id="22_qkpxi"]
 [ext_resource type="Texture2D" uid="uid://b5w2p65gdelyx" path="res://assets/textures/table/palette.png" id="26_yq6so"]
 [ext_resource type="Texture2D" uid="uid://db5ra4n6pvwlo" path="res://assets/textures/table/brushes.png" id="27_fv21b"]
@@ -107,7 +101,7 @@ texture_hover = ExtResource("5_yq6so")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("4_muem4")
-panel = NodePath("../../Panels/BookContents")
+panel = NodePath("../../Panels/DiaryContents")
 
 [node name="KidsAlbum" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("panel")]
 anchors_preset = -1
@@ -123,7 +117,7 @@ grow_horizontal = 0
 grow_vertical = 2
 rotation = 0.314042
 scale = Vector2(0.846794, 0.846794)
-tooltip_text = "Альбом с рисунками детей-участников блокады Ленинграда"
+tooltip_text = "Альбом с рисунками детей блокады Ленинграда"
 theme = ExtResource("3_og1vs")
 texture_normal = ExtResource("8_tel4y")
 texture_pressed = ExtResource("9_qkpxi")
@@ -193,7 +187,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Panels" type="Node" parent="."]
 
-[node name="BookContents" type="Panel" parent="Panels"]
+[node name="DiaryContents" type="Panel" parent="Panels"]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -203,10 +197,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jbj1t")
 script = ExtResource("7_gqmmt")
-pages = Array[ExtResource("8_yc10j")]([ExtResource("9_jscy8"), ExtResource("15_muem4"), ExtResource("12_gqmmt"), ExtResource("13_yc10j"), ExtResource("14_jscy8")])
-isBook = true
+book_type = 1
 
-[node name="Pages" type="TextureRect" parent="Panels/BookContents"]
+[node name="Pages" type="TextureRect" parent="Panels/DiaryContents"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -219,7 +212,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("22_qkpxi")
 
-[node name="Image" type="TextureRect" parent="Panels/BookContents"]
+[node name="Image" type="TextureRect" parent="Panels/DiaryContents"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.02
@@ -234,7 +227,7 @@ texture = ExtResource("10_jkv2x")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="Title" type="RichTextLabel" parent="Panels/BookContents"]
+[node name="Title" type="RichTextLabel" parent="Panels/DiaryContents"]
 layout_mode = 0
 offset_left = 2065.0
 offset_top = 237.0
@@ -248,7 +241,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Description" type="RichTextLabel" parent="Panels/BookContents"]
+[node name="Description" type="RichTextLabel" parent="Panels/DiaryContents"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.519792
@@ -263,7 +256,7 @@ horizontal_alignment = 1
 threaded = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Next" type="Button" parent="Panels/BookContents"]
+[node name="Next" type="Button" parent="Panels/DiaryContents"]
 z_index = 1
 layout_mode = 0
 offset_left = 3331.0
@@ -276,7 +269,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
 icon = ExtResource("11_y6deb")
 
-[node name="Back" type="Button" parent="Panels/BookContents"]
+[node name="Back" type="Button" parent="Panels/DiaryContents"]
 z_index = 1
 layout_mode = 0
 offset_left = 3246.0
@@ -290,7 +283,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
 icon = ExtResource("11_y6deb")
 
-[node name="Close" type="Button" parent="Panels/BookContents"]
+[node name="Close" type="Button" parent="Panels/DiaryContents"]
 z_index = 1
 layout_mode = 0
 offset_left = 3579.0
@@ -503,9 +496,9 @@ unique_name_in_owner = true
 bus = &"SFX"
 
 [connection signal="pressed" from="Buttons/MainClose" to="." method="_on_close_pressed"]
-[connection signal="pressed" from="Panels/BookContents/Next" to="Panels/BookContents" method="_on_next_pressed"]
-[connection signal="pressed" from="Panels/BookContents/Back" to="Panels/BookContents" method="_on_back_pressed"]
-[connection signal="pressed" from="Panels/BookContents/Close" to="Panels/BookContents" method="_on_close_pressed"]
+[connection signal="pressed" from="Panels/DiaryContents/Next" to="Panels/DiaryContents" method="_on_next_pressed"]
+[connection signal="pressed" from="Panels/DiaryContents/Back" to="Panels/DiaryContents" method="_on_back_pressed"]
+[connection signal="pressed" from="Panels/DiaryContents/Close" to="Panels/DiaryContents" method="_on_close_pressed"]
 [connection signal="pressed" from="Panels/AlbumContents/Next" to="Panels/AlbumContents" method="_on_next_pressed"]
 [connection signal="pressed" from="Panels/AlbumContents/Back" to="Panels/AlbumContents" method="_on_back_pressed"]
 [connection signal="pressed" from="Panels/AlbumContents/Close" to="Panels/AlbumContents" method="_on_close_pressed"]
