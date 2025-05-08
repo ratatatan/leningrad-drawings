@@ -6,6 +6,8 @@ enum BookType {
 }
 
 @export var book_type: BookType
+@export var button_next: Button
+@export var button_back: Button
 
 var current_page := 0:
 	set(x): current_page = clamp(x, 0, pages.size()-1)
@@ -72,6 +74,10 @@ func init_page(page_index: int) -> void:
 		title.text = new_page.title
 	else:
 		title.text = Constants.lorem_ipsum
+		
+	button_back.disabled = (page_index == 0)
+	button_next.disabled = (page_index + 1 == len(pages))
+		
 
 func open_on_page(page_index: int) -> void:
 	init_page(page_index)

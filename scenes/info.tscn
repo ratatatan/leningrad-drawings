@@ -52,10 +52,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Title" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0539139
-anchor_top = 0.0124252
-anchor_right = 0.424487
-anchor_bottom = 0.0846472
+anchor_left = 0.0969414
+anchor_top = 0.0694892
+anchor_right = 0.467514
+anchor_bottom = 0.141711
 theme = ExtResource("3_2iy26")
 theme_override_colors/default_color = Color(0.756863, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_2iy26")
@@ -68,7 +68,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0539139
-anchor_top = 0.0961804
+anchor_top = 0.150023
 anchor_right = 0.516589
 anchor_bottom = 0.927289
 offset_bottom = 0.00012207
@@ -97,36 +97,57 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.547952
-anchor_top = 0.0124252
-anchor_right = 0.947123
-anchor_bottom = 0.146341
+anchor_top = 0.042798
+anchor_right = 0.99015
+anchor_bottom = 0.176714
 theme_override_colors/default_color = Color(0.756863, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_2iy26")
-theme_override_font_sizes/normal_font_size = 95
+theme_override_font_sizes/normal_font_size = 112
 text = "Выставку подготовили студенты Университета ИТМО"
+scroll_active = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Credits3" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.124703
+anchor_top = 0.649998
+anchor_right = 0.280429
+anchor_bottom = 0.854324
+offset_left = 2579.11
+offset_top = -373.446
+offset_right = 2579.11
+offset_bottom = -373.446
+theme_override_colors/default_color = Color(0.756863, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_1sggn")
+theme_override_fonts/bold_font = ExtResource("2_2iy26")
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 120
+bbcode_enabled = true
+text = "[color=c10000]Разработчики:[/color][color=000][font_size=75]
+[b]Кузнецова Виталия[/b]
+[b]Толкачев Тимур[/b]
+[/font_size][/color]"
 scroll_active = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Credits" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.547952
-anchor_top = 0.125173
-anchor_right = 0.947123
-anchor_bottom = 0.56972
+anchor_left = 0.54536
+anchor_top = 0.181316
+anchor_right = 0.944531
+anchor_bottom = 0.462034
 theme_override_colors/default_color = Color(0.756863, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_1sggn")
 theme_override_fonts/bold_font = ExtResource("2_2iy26")
-theme_override_font_sizes/normal_font_size = 120
+theme_override_font_sizes/normal_font_size = 100
 theme_override_font_sizes/bold_font_size = 120
 bbcode_enabled = true
 text = "[color=c10000]Креативная команда:[/color]
-[color=000][font_size=80][b]Марченко Дария[/b] - разработка концепции выставки
-[b]Ковалёва София[/b]  - анализ экспонатов
-[b]Мосолова Полина[/b] - озвучка и работа с аудиоматериалами
-[/font_size][/color][color=c10000]Разработчики:[/color][color=000][font_size=80]
-[b]Кузнецова Виталия[/b]
-[b]Толкачев Тимур[/b]
+[color=000][font_size=75][b]Марченко Дария[/b]  -  разработка концепции выставки
+[b]Ковалёва София[/b]   -  анализ экспонатов
+[b]Мосолова Полина[/b]  -  озвучка и работа с аудиоматериалами
 [/font_size][/color]"
 scroll_active = false
 metadata/_edit_use_anchors_ = true
@@ -134,17 +155,17 @@ metadata/_edit_use_anchors_ = true
 [node name="Credits2" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.547952
-anchor_top = 0.569719
-anchor_right = 0.947123
-anchor_bottom = 0.899677
+anchor_left = 0.543546
+anchor_top = 0.648872
+anchor_right = 0.942716
+anchor_bottom = 0.951679
 theme_override_colors/default_color = Color(0.756863, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_1sggn")
 theme_override_fonts/bold_font = ExtResource("2_2iy26")
-theme_override_font_sizes/normal_font_size = 120
+theme_override_font_sizes/normal_font_size = 100
 theme_override_font_sizes/bold_font_size = 120
 bbcode_enabled = true
-text = "Благодарим сотрудников городского Дворца творчества юных:[color=000][font_size=80][b]
+text = "Благодарим сотрудников городского Дворца творчества юных:[color=000][font_size=75][b]
 Кузину Дарью Ивановну, 
 Виговскую Александру Дмитриевну,
 Мамонтову Ольгу Дмитриевну.

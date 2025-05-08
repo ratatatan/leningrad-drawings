@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b2yx02mwauxqv"]
+[gd_scene load_steps=29 format=3 uid="uid://b2yx02mwauxqv"]
 
 [ext_resource type="Script" uid="uid://bp11yuqa2xrqy" path="res://scripts/scenes/main.gd" id="1_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://c0aivvrlyeun4" path="res://assets/textures/table/desk.jpg" id="2_tel4y"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dahmcg6c4vu1t" path="res://assets/textures/ui/arrow.png" id="11_y6deb"]
 [ext_resource type="Texture2D" uid="uid://chry2egjw4uim" path="res://assets/textures/ui/close.png" id="12_og1vs"]
 [ext_resource type="Script" uid="uid://cga6l2fob5ljf" path="res://scripts/game_objects/note_contents.gd" id="13_2wyq8"]
+[ext_resource type="StyleBox" uid="uid://c8l54s5lb8hqj" path="res://resources/themes/main/disabled_button.tres" id="19_yc10j"]
 [ext_resource type="Texture2D" uid="uid://dvuijhdm8hesq" path="res://assets/textures/ui/pages2.png" id="22_qkpxi"]
 [ext_resource type="Texture2D" uid="uid://b5w2p65gdelyx" path="res://assets/textures/table/palette.png" id="26_yq6so"]
 [ext_resource type="Texture2D" uid="uid://db5ra4n6pvwlo" path="res://assets/textures/table/brushes.png" id="27_fv21b"]
@@ -187,7 +188,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Panels" type="Node" parent="."]
 
-[node name="DiaryContents" type="Panel" parent="Panels"]
+[node name="DiaryContents" type="Panel" parent="Panels" node_paths=PackedStringArray("button_next", "button_back")]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -198,6 +199,8 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jbj1t")
 script = ExtResource("7_gqmmt")
 book_type = 1
+button_next = NodePath("Next")
+button_back = NodePath("Back")
 
 [node name="Pages" type="TextureRect" parent="Panels/DiaryContents"]
 layout_mode = 1
@@ -264,6 +267,7 @@ offset_top = 1897.0
 offset_right = 3851.0
 offset_bottom = 2417.0
 scale = Vector2(0.4, 0.4)
+theme_override_styles/disabled = ExtResource("19_yc10j")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jscy8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
@@ -278,6 +282,7 @@ offset_right = 3766.0
 offset_bottom = 2623.0
 rotation = 3.14159
 scale = Vector2(0.4, 0.4)
+theme_override_styles/disabled = ExtResource("19_yc10j")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jscy8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
@@ -296,7 +301,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
 icon = ExtResource("12_og1vs")
 
-[node name="AlbumContents" type="Panel" parent="Panels"]
+[node name="AlbumContents" type="Panel" parent="Panels" node_paths=PackedStringArray("button_next", "button_back")]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -306,6 +311,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jbj1t")
 script = ExtResource("7_gqmmt")
+button_next = NodePath("Next")
+button_back = NodePath("Back")
 
 [node name="Pages" type="TextureRect" parent="Panels/AlbumContents"]
 layout_mode = 1
@@ -372,6 +379,7 @@ offset_top = 1897.0
 offset_right = 3851.0
 offset_bottom = 2417.0
 scale = Vector2(0.4, 0.4)
+theme_override_styles/disabled = ExtResource("19_yc10j")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jscy8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
@@ -386,6 +394,7 @@ offset_right = 3766.0
 offset_bottom = 2623.0
 rotation = 3.14159
 scale = Vector2(0.4, 0.4)
+theme_override_styles/disabled = ExtResource("19_yc10j")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jscy8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yc10j")
