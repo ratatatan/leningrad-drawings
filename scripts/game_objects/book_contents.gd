@@ -6,12 +6,9 @@ enum BookType {
 }
 
 @export var book_type: BookType
-@export var button_next: Button
-@export var button_back: Button
 
 var current_page := 0:
 	set(x): current_page = clamp(x, 0, pages.size()-1)
-var last_page := 0
 
 var tween: Tween
 
@@ -23,6 +20,8 @@ var tween: Tween
 @onready var image := $Image
 @onready var desc := $Description
 @onready var title := $Title
+@onready var button_next: Button = $Next
+@onready var button_back: Button = $Back
 
 func _ready() -> void:
 	if Settings.animations_enabled:
@@ -50,7 +49,7 @@ func fade_out(delta: float = 0.5) -> void:
 	tween.parallel().tween_property(desc, "modulate", Color.TRANSPARENT, delta)
 
 func fade_in(delta: float = 0.5) -> void:
-	tween = create_tween().set_ease(Tween.EASE_OUT) \
+	tween = create_tween().set_ease(Tween.EASE_IN) \
 	.set_trans(Tween.TRANS_LINEAR)
 	tween.tween_property(image, "modulate", Color.WHITE, delta)
 	tween.parallel().tween_property(title, "modulate", Color.WHITE, delta)
@@ -89,11 +88,7 @@ func open_on_page(page_index: int) -> void:
 	if pages[page_index].audio:
 		main.play_speech(pages[page_index].audio)
 
-func update_page() -> void:
-	print("Changing page from %s to %s" % [last_page, current_page])
-	if last_page == current_page: return
-	last_page = current_page
-	
+func update_page() -> void:	
 	if Settings.animations_enabled:
 		fade_out()
 		await tween.finished
